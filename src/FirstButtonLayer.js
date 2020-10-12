@@ -43,7 +43,6 @@ export default function FirstButtonLayer(props) {
                 return <button onClick={handleClick2} value={button}>{button.toUpperCase()}</button>
                 })
             )
-            //GOOD AT THIS POINT
         }
     },[secondButton])
 
