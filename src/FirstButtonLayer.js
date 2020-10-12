@@ -28,7 +28,11 @@ export default function FirstButtonLayer(props) {
     let [secondLayerButtons, setSecondLayerButtons] = useState('')
     const isInitialMount = useRef(true);
     
-
+    let [specificInput, setSpecificInput] = useState('')
+    
+    function handleClick2(e){
+        setSpecificInput(e.target.value)
+    }
 
     useEffect(()=>{
         if (isInitialMount.current) {
@@ -36,7 +40,7 @@ export default function FirstButtonLayer(props) {
         } else {
             setSecondLayerButtons (
                 secondButton.map((button)=>{
-                return <button value={button}>{button.toUpperCase()}</button>
+                return <button onClick={handleClick2} value={button}>{button.toUpperCase()}</button>
                 })
             )
             //GOOD AT THIS POINT
@@ -49,8 +53,11 @@ export default function FirstButtonLayer(props) {
             <br/>
             {firstButtonLayer}
             <br/>
+            <br/>
             {secondLayerButtons===''? null: secondLayerButtons}
-            <SpecificInputs />
+            <br/>
+            <br/>
+            <SpecificInputs specificInput={specificInput}/>
             
         </div>
     )
