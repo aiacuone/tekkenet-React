@@ -10,23 +10,26 @@ function CharacterDropdown(){
     let charOptions= characterArr.map((char)=>{
         return <option key = {char} value={char}>{char.toUpperCase()}</option>
     })
-
+ 
     /** USE STATE HOOKS**/
     let [character,setCharacter]=useState('')
 
     function characterChange(e){
-        setCharacter(character=e.target.value)
+        setCharacter(character=e.target.value)   
     }
-    useEffect(()=>{
-    },[character])
 
+    useEffect(()=>{
+        
+    },[character])
+    
     return(
         <div>
             <label htmlFor='characterDropdown'>CHOOSE YOUR CHARACTER</label>
                 <select name='characterDropdown' onChange={characterChange} value={character}>
                   {charOptions}
                 </select>
-                <FirstButtonLayer characterReference={character}/>
+                {character===''? null :<FirstButtonLayer character={character} />}
+  
         </div>
     )
 }
