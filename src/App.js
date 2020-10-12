@@ -1,11 +1,12 @@
 import React from 'react';
 import CharacterDropdown from './CharacterDropdown'
+import FirstButtonLayer from './FirstButtonLayer'
 
 function App() {
-  let test = 'test in App'
   return (
     <>
-    <CharacterDropdown test={test}/>
+    <CharacterDropdown />
+    <FirstButtonLayer />
     </>
   )
 }
