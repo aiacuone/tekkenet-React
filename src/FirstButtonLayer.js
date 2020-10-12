@@ -1,5 +1,5 @@
 import React, {useState,useEffect,useRef} from 'react'
-import SecondButtonLayer from './SecondButtonLayer'
+import SpecificInputs from './SpecificInputs'
 
 
 export default function FirstButtonLayer(props) {
@@ -19,7 +19,6 @@ export default function FirstButtonLayer(props) {
         return <button onClick={handleClick} value={button} className='firstLayerButton'>{button.toUpperCase()}</button>
     })
 
-    console.log(Object.keys(secondLayerObj))
     let [secondButton,setSecondButton]=useState('') 
 
     function handleClick(e){
@@ -29,6 +28,8 @@ export default function FirstButtonLayer(props) {
     let [secondLayerButtons, setSecondLayerButtons] = useState('')
     const isInitialMount = useRef(true);
     
+
+
     useEffect(()=>{
         if (isInitialMount.current) {
             isInitialMount.current = false;
@@ -47,7 +48,9 @@ export default function FirstButtonLayer(props) {
         <div>
             <br/>
             {firstButtonLayer}
-            {secondLayerButtons===''? null: <SecondButtonLayer buttons={secondLayerButtons} character={character}/>}
+            <br/>
+            {secondLayerButtons===''? null: secondLayerButtons}
+            <SpecificInputs />
             
         </div>
     )
