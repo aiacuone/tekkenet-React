@@ -4,9 +4,7 @@ import SecondButtonLayer from './SecondButtonLayer'
 
 export default function FirstButtonLayer(props) {
     let character=props.character
-    let layerArr=['Height','Launch','Frames','Knockdown','Rage','Safety','Situational','Strings']
     
-
     let secondLayerObj= { 
         Height:['Specific Height','Start & Finish Height'],
         Launch:['Launchers','Launch On Counter'],
@@ -17,13 +15,12 @@ export default function FirstButtonLayer(props) {
         Situational:['+OnBlock','PowerCrush','Wall Bounce','Homing'],
         Strings:['Single','Dual','Tripple']          
                         }
-    let layerOptions=Object.keys(secondLayerObj).map((button)=>{
+    let firstButtonLayer=Object.keys(secondLayerObj).map((button)=>{
         return <button onClick={handleClick} value={button} className='firstLayerButton'>{button.toUpperCase()}</button>
     })
 
     console.log(Object.keys(secondLayerObj))
     let [secondButton,setSecondButton]=useState('') 
-    // let secondLayerButtons=''
 
     function handleClick(e){
         setSecondButton(secondLayerObj[e.target.value])
@@ -49,7 +46,7 @@ export default function FirstButtonLayer(props) {
     return (
         <div>
             <br/>
-            {layerOptions}
+            {firstButtonLayer}
             {secondLayerButtons===''? null: <SecondButtonLayer buttons={secondLayerButtons} character={character}/>}
             
         </div>
