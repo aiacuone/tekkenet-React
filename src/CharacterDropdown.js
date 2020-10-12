@@ -16,9 +16,6 @@ function CharacterDropdown(){
 
     function characterChange(e){
         setCharacter(character=e.target.value)
-        console.log('characterChange')
-         return (<FirstButtonLayer test='test'/>)
-        // return <FirstButtonLayer characterDropdownValue= {e.target.value} test='test'/>
     }
     useEffect(()=>{
     },[character])
@@ -29,7 +26,7 @@ function CharacterDropdown(){
                 <select name='characterDropdown' onChange={characterChange} value={character}>
                   {charOptions}
                 </select>
-                {/* <FirstButtonLayer test='test' /> */}
+                <FirstButtonLayer characterReference={character}/>
         </div>
     )
 }

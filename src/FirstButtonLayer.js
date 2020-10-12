@@ -1,21 +1,20 @@
 import React, {useState,useEffect} from 'react'
 
 export default function firstButtonLayer(props) {
-    // let [character,setCharacter]=useState('')
-
-    // useEffect(()=>{
-    //     console.log('useEffect in firstbutton')
-    //     setCharacter(props.characterDropdownValue)
-    // })
 
 
-    
+    let characterReferece= props.characterReference
+    let layerArr=['Height','Launch','Frames','Knockdown','Rage','Safety','Situational','Strings']
+    let layerOptions=layerArr.map((button)=>{
+        return <button onClick={handleClick} value={button} className='firstLayerButton'>{button.toUpperCase()}</button>
+    })
+    function handleClick(){
+
+    }
     return (
         <div>
-            {console.log(props)}
-            {/* {console.log('firstButtonLayer')} */}
-            {/* {console.log(character)} */}
-            {/* {console.log(props.characterDropdownValue)} */}
+            {layerOptions}
+            
         </div>
     )
 }
