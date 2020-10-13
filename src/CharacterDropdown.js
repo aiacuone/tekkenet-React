@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import App from './App'
 import ButtonLayer1 from './ButtonLayer1'
 
 export default function CharacterDropdown() {
