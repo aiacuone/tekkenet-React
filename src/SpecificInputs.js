@@ -16,8 +16,6 @@ export default function SpecificInput({value}) {
             {value==='Start & Finish Height'&&<StartNFinish />}
             {value==='Specific Frame'&&<SpecificFrame />}
             {value==='Frame Range'&&<FrameRange />}
-        test
-
         </div>
     )
 }
