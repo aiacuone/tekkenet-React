@@ -10,6 +10,7 @@ export default function FrameRange() {
     return (
        
         <div>
+            yrdy
             <h1>FRAME RANGE</h1>
             <label>LOW<input type='number' value={lowValue} name='low' min='0' onChange={handleChange}></input></label>
             <label>HIGH<input type='number' value={highValue} name='high' min='0' onChange={handleChange}></input></label>
