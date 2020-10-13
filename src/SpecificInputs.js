@@ -23,9 +23,9 @@ function handleChange(e){
         setStartNFinish2(e.target.value)
     }else if(targetName==='Specific Frame'){
         setSpecificFrame(e.target.value)
-    }else if(targetName==='Frame Range1'){
+    }else if(targetName==='frameRangeValue1'){
         setFrameRangeValue1(e.target.value)
-    }else if(targetName==='Frame Range2'){
+    }else if(targetName==='frameRangeValue2'){
         setFrameRangeValue2(e.target.value)
     }
 }
@@ -56,6 +56,11 @@ let specificHeight=
     <label>HIGH<input type='radio' name='Specific Height' value='h' onClick={handleChange}></input></label>
 </form>
 
+let frameRange= 
+    <form>
+        <label>FIRST FRAME<input type='number' name='frameRangeValue1' onChange={handleChange} min='0' value={frameRangeValue1}></input></label>
+        <label>LAST FRAME<input type='number' name='frameRangeValue2' onChange={handleChange} min='0' value={frameRangeValue2}></input></label>
+    </form>
     return (
         <div>
             <h1>{props.secondLayerInput.toUpperCase()}</h1>
@@ -75,6 +80,12 @@ let specificHeight=
             {props.secondLayerInput==='Specific Frame'&& <input type='number' name='Specific Frame' onChange={handleChange} min='0' value={specificFrame}></input>}
 
             {/** Frame Range **/}
+            {props.secondLayerInput==='Frame Range'&& 
+            <div>
+                {frameRange}
+                {frameRangeValue1!==''&& frameRangeValue2!=='' && 'Frame Range Works!' }
+            </div>}
+            
         </div>
     )
 }
