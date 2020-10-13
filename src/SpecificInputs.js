@@ -16,12 +16,13 @@ let [startNFinish2, setStartNFinish2] =useState('')
 function startNFinish(e){
     e.target.name==='StartNFinish1'? setStartNFinish1(e.target.value):setStartNFinish2(e.target.value)
  }
+ console.log(props.handleClick)
     return (
         <div>
             
 
-            {props.specificInput==='Specific Height'&&<input onChange={handleChange} type='number'></input>}
-            {props.specificInput==='Start & Finish Height'&&
+            {props.secondLayerInput==='Specific Height'&&<input onChange={handleChange} type='number'></input>}
+            {props.secondLayerInput==='Start & Finish Height'&&
                 <form>
                     <input 
                         onChange={startNFinish} 

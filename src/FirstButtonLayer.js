@@ -28,10 +28,10 @@ export default function FirstButtonLayer(props) {
     let [secondLayerButtons, setSecondLayerButtons] = useState('')
     const isInitialMount = useRef(true);
     
-    let [specificInput, setSpecificInput] = useState('')
+    let [secondLayerInput, setSecondLayerInput] = useState('')
     
     function handleClick2(e){
-        setSpecificInput(e.target.value)
+        setSecondLayerInput(e.target.value)
     }
 
     useEffect(()=>{
@@ -56,7 +56,8 @@ export default function FirstButtonLayer(props) {
             {secondLayerButtons===''? null: secondLayerButtons}
             <br/>
             <br/>
-            <SpecificInputs specificInput={specificInput} character={character}/>
+            {secondLayerInput==''?null: <SpecificInputs secondLayerInput={secondLayerInput} character={character}/>}
+            {/* <SpecificInputs secondLayerInput={secondLayerInput} character={character} handleClick={handleClick2}/> */}
             
         </div>
     )
