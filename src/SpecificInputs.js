@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Table from './Table'
 
 export default function SpecificInputs(props) {
 
@@ -17,16 +18,24 @@ function handleChange(e){
 
     if(targetName==='Specific Height'){
         setSpecificHeightValue(e.target.value)
+        // console.log('handle change')
     }else if(targetName==='StartNFinish1'){ 
         setStartNFinish1(e.target.value)
+        // console.log('handle change')
     }else if(targetName==='StartNFinish2'){
         setStartNFinish2(e.target.value)
+        // console.log('handle change')
     }else if(targetName==='Specific Frame'){
         setSpecificFrame(e.target.value)
+        // console.log('handle change')
     }else if(targetName==='frameRangeValue1'){
         setFrameRangeValue1(e.target.value)
+        // console.log('handle change')
     }else if(targetName==='frameRangeValue2'){
         setFrameRangeValue2(e.target.value)
+        // console.log('handle change')
+    }else{
+        
     }
 }
 
@@ -48,7 +57,7 @@ let startNFinishInputs = startNFinishArr.map((item)=>{
      </form>
 })
 
-/** specificHeight **/
+/** specificHeight Inputs **/
 let specificHeight= 
 <form>
     <label>LOW<input type='radio' name='Specific Height' value='l' onClick={handleChange}></input></label>
@@ -61,29 +70,41 @@ let frameRange=
         <label>FIRST FRAME<input type='number' name='frameRangeValue1' onChange={handleChange} min='0' value={frameRangeValue1}></input></label>
         <label>LAST FRAME<input type='number' name='frameRangeValue2' onChange={handleChange} min='0' value={frameRangeValue2}></input></label>
     </form>
+    
     return (
         <div>
             <h1>{props.secondLayerInput.toUpperCase()}</h1>
             
             {/* Specific Height */}
-            {props.secondLayerInput==='Specific Height'&& specificHeight}
+            {props.secondLayerInput==='Specific Height'&& 
+            <div>
+                {specificHeight}
+                {specificHeightValue!==''&& <Table specificHeightValue={specificHeightValue} secondLayerInput={props.secondLayerInput}/>}
+            </div>
+            }
             
             {/* Start & Finish Height */}
             {props.secondLayerInput==='Start & Finish Height'&&
-                    <form>
+                    <div>
                         {startNFinishInputs}
-                    <h3>{startNFinish1 !=='' && startNFinish2!==''? <h1>startNFinish works!</h1>:null}</h3>
-                </form>
+                        <h3>{startNFinish1 !=='' && startNFinish2!==''? <Table startNFinish1={startNFinish1} startNFinish2={startNFinish2} secondLayerInput={props.secondLayerInput}/>:null}</h3>
+                    </div>
             }
 
             {/* Specific Frame */}
-            {props.secondLayerInput==='Specific Frame'&& <input type='number' name='Specific Frame' onChange={handleChange} min='0' value={specificFrame}></input>}
+            {props.secondLayerInput==='Specific Frame'&& 
+                <div>
+                    <input type='number' name='Specific Frame' onChange={handleChange} min='0' value={specificFrame}></input>
+                    {specificFrame !=='' && <Table secondLayerInput={props.secondLayerInput} specificFrame={specificFrame}/>}
+                </div>}
 
             {/** Frame Range **/}
             {props.secondLayerInput==='Frame Range'&& 
             <div>
                 {frameRange}
-                {frameRangeValue1!==''&& frameRangeValue2!=='' && 'Frame Range Works!' }
+                {frameRangeValue1!==''&& frameRangeValue2!=='' && 
+                    <Table secondLayerInput={props.secondLayerInput} frameRangeValue1={frameRangeValue1} frameRangeValue2={frameRangeValue2}/>
+                }
             </div>}
             
         </div>

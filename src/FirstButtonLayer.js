@@ -26,15 +26,16 @@ export default function FirstButtonLayer(props) {
     }
    
     let [secondLayerButtons, setSecondLayerButtons] = useState('')
-    const isInitialMount = useRef(true);
+    
     
     let [secondLayerInput, setSecondLayerInput] = useState('')
     
     function handleClick2(e){
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setSecondLayerInput(e.target.value)
     }
-
+    
+    const isInitialMount = useRef(true);
     useEffect(()=>{
         if (isInitialMount.current) {
             isInitialMount.current = false;
@@ -59,7 +60,7 @@ export default function FirstButtonLayer(props) {
             <br/>
             {secondLayerInput===''?null: <SpecificInputs secondLayerInput={secondLayerInput} character={character}/>}
             {/* <SpecificInputs secondLayerInput={secondLayerInput} character={character} handleClick={handleClick2}/> */}
-            {secondLayerInput==='Specific Height'?null:secondLayerInput==='Start & Finish Height'?null:secondLayerInput==='Specific Frame'?null:secondLayerInput==='Frame Range'?null:<Table secondLayerInput={secondLayerInput}/>}
+            {secondLayerInput==='Specific Height'?null:secondLayerInput==='Start & Finish Height'?null:secondLayerInput==='Specific Frame'?null:secondLayerInput==='Frame Range'?null:secondLayerInput===''?null:<Table secondLayerInput={secondLayerInput}/>}
         </div>
     )
 }
