@@ -1,6 +1,6 @@
 import React, {useState,useEffect,useRef} from 'react'
 import SpecificInputs from './SpecificInputs'
-
+import Table from './Table'
 
 export default function FirstButtonLayer(props) {
     let character=props.character
@@ -31,6 +31,7 @@ export default function FirstButtonLayer(props) {
     let [secondLayerInput, setSecondLayerInput] = useState('')
     
     function handleClick2(e){
+        console.log(e.target.value)
         setSecondLayerInput(e.target.value)
     }
 
@@ -46,7 +47,7 @@ export default function FirstButtonLayer(props) {
         }
     },[secondButton])
 
-  
+ 
     return (
         <div>
             <br/>
@@ -58,7 +59,7 @@ export default function FirstButtonLayer(props) {
             <br/>
             {secondLayerInput===''?null: <SpecificInputs secondLayerInput={secondLayerInput} character={character}/>}
             {/* <SpecificInputs secondLayerInput={secondLayerInput} character={character} handleClick={handleClick2}/> */}
-            
+            {secondLayerInput==='Specific Height'?null:secondLayerInput==='Start & Finish Height'?null:secondLayerInput==='Specific Frame'?null:secondLayerInput==='Frame Range'?null:<Table secondLayerInput={secondLayerInput}/>}
         </div>
     )
 }
