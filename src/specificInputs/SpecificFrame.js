@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export default function SpecificFrame() {
+export default function SpecificFrame({dropDownValue}) {
     let [value,setValue]=useState('')
     function handleChange(e){
         setValue(e.target.value)

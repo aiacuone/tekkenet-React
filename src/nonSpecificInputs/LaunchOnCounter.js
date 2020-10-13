@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function LaunchOnCounter() {
+export default function LaunchOnCounter({dropDownValue}) {
     return (
         <div>
             LaunchOnCounter

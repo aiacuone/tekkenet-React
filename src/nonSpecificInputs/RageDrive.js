@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function RageDrive() {
+export default function RageDrive({dropDownValue}) {
     return (
         <div>
             RageDrive

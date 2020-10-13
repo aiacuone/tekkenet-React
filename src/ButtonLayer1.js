@@ -24,7 +24,7 @@ return <button onClick={handleClick}value={value}>{value.toUpperCase()}</button>
     return (
         <div>
             {buttons}
-            {buttonLayer1Value!==''&&<ButtonLayer2 buttonLayer1Value={buttonLayer1Value} buttonValues={buttonValues}/>}
+            {buttonLayer1Value!==''&&<ButtonLayer2  buttonLayer1Value={buttonLayer1Value} buttonValues={buttonValues}dropDownValue={dropDownValue}/>}
         </div>
     )
 }

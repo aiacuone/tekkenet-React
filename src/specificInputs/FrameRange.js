@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export default function FrameRange() {
+export default function FrameRange({dropDownValue}) {
     let [lowValue,setLowValue]=useState('')
     let [highValue,setHighValue]=useState('')
 

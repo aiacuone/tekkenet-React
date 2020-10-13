@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function CounterKnockdown() {
+export default function CounterKnockdown({dropDownValue}) {
     return (
         <div>
             CounterKnockdown

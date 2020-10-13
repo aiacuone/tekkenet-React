@@ -15,24 +15,24 @@ import Single from './nonSpecificInputs/Single'
 import Dual from './nonSpecificInputs/Dual'
 import Tripple from './nonSpecificInputs/Tripple'
 
-export default function Table({value}) {
+export default function Table({value,dropDownValue}) {
     return (
         <div>
-            {value==='Launchers'&&<Launchers />}
-            {value==='Launch On Counter'&&<LaunchOnCounter />}
-            {value==='Knockdown'&&<Knockdown />}
-            {value==='Counter Knockdown'&&<CounterKnockdown />}
-            {value==='Rage Art'&&<RageArt />}
-            {value==='Rage Drive'&&<RageDrive />}
-            {value==='Safe'&&<Safe />}
-            {value==='Unsafe'&&<UnSafe />}
-            {value==='+OnBlock'&&<PlusOnBlock />}
-            {value==='PowerCrush'&&<PowerCrush />}
-            {value==='Wall Bounce'&&<WallBounce />}
-            {value==='Homing'&&<Homing />}
-            {value==='Single'&&<Single />}
-            {value==='Dual'&&<Dual />}
-            {value==='Tripple'&&<Tripple />}
+            {value==='Launchers'&&<Launchers dropDownValue={dropDownValue}/>}
+            {value==='Launch On Counter'&&<LaunchOnCounter dropDownValue={dropDownValue}/>}
+            {value==='Knockdown'&&<Knockdown dropDownValue={dropDownValue}/>}
+            {value==='Counter Knockdown'&&<CounterKnockdown dropDownValue={dropDownValue}/>}
+            {value==='Rage Art'&&<RageArt dropDownValue={dropDownValue}/>}
+            {value==='Rage Drive'&&<RageDrive dropDownValue={dropDownValue}/>}
+            {value==='Safe'&&<Safe dropDownValue={dropDownValue}/>}
+            {value==='Unsafe'&&<UnSafe dropDownValue={dropDownValue}/>}
+            {value==='+OnBlock'&&<PlusOnBlock dropDownValue={dropDownValue}/>}
+            {value==='PowerCrush'&&<PowerCrush dropDownValue={dropDownValue}/>}
+            {value==='Wall Bounce'&&<WallBounce dropDownValue={dropDownValue}/>}
+            {value==='Homing'&&<Homing dropDownValue={dropDownValue}/>}
+            {value==='Single'&&<Single dropDownValue={dropDownValue}/>}
+            {value==='Dual'&&<Dual dropDownValue={dropDownValue}/>}
+            {value==='Tripple'&&<Tripple dropDownValue={dropDownValue}/>}
         </div>
     )
 }

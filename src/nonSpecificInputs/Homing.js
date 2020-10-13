@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function Homing() {
+
+export default function Homing({dropDownValue}) {
     return (
         <div>
             Homing

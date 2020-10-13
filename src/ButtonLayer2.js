@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import NonSpecificInputs from './NonSpecificInputs'
 import SpecificInputs from './SpecificInputs'
 
-export default function ButtonLayer2({buttonLayer1Value,buttonValues}) {
+export default function ButtonLayer2({buttonLayer1Value,buttonValues,dropDownValue}) {
     
     let [noSpecificButtonValue,setNoSpecificButtonValue]=useState('')
     let [specificButtonValue,setSpecificButtonValue]=useState('')
@@ -20,8 +20,8 @@ export default function ButtonLayer2({buttonLayer1Value,buttonValues}) {
     return (
         <div>
             {buttonLayer2}
-            {noSpecificButtonValue!==''&&<NonSpecificInputs value={noSpecificButtonValue} />}
-            {specificButtonValue!==''&&<SpecificInputs value={specificButtonValue} />}
+            {noSpecificButtonValue!==''&&<NonSpecificInputs value={noSpecificButtonValue} dropDownValue={dropDownValue}/>}
+            {specificButtonValue!==''&&<SpecificInputs value={specificButtonValue} dropDownValue={dropDownValue}/>}
         </div>
     )
 }

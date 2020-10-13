@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export default function StartNFinish() {
+export default function StartNFinish({dropDownValue}) {
     let [value1,setValue1]=useState('')
     let [value2,setValue2]=useState('')
 
