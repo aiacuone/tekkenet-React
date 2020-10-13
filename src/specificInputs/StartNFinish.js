@@ -18,7 +18,6 @@ export default function StartNFinish() {
             <label>LOW<input type='radio' name='StartNFinish2' value='l' onClick={handleChange}></input></label>
             <label>MED<input type='radio' name='StartNFinish2' value='m' onClick={handleChange}></input></label>
             <label>HIGH<input type='radio' name='StartNFinish2' value='h' onClick={handleChange}></input></label>
-            tewst
         </div>
     )
 }

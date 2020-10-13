@@ -12,9 +12,3 @@ export default function SpecificFrame() {
         </div>
     )
 }
- {/* Specific Frame */}
-//  {props.secondLayerInput==='Specific Frame'&& 
-//  <div>
-//      <input type='number' name='Specific Frame' onChange={handleChange} min='0' value={specificFrame}></input>
-//      {specificFrame !=='' && <Table secondLayerInput={props.secondLayerInput} specificFrame={specificFrame}/>}
-//  </div>}
