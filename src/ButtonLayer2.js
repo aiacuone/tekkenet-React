@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import Table from './Table'
+import NonSpecificInput from './NonSpecificInput'
 import SpecificInput from './SpecificInput'
 
 export default function ButtonLayer2({buttonLayer1Value,buttonValues}) {
@@ -20,8 +20,8 @@ export default function ButtonLayer2({buttonLayer1Value,buttonValues}) {
     return (
         <div>
             {buttonLayer2}
-            {noSpecificButtonValue!==''&&<Table noSpecificButtonValue={noSpecificButtonValue} />}
-            {specificButtonValue!==''&&<SpecificInput specificButtonValue={specificButtonValue} />}
+            {noSpecificButtonValue!==''&&<NonSpecificInput value={noSpecificButtonValue} />}
+            {specificButtonValue!==''&&<SpecificInput value={specificButtonValue} />}
         </div>
     )
 }
