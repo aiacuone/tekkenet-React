@@ -2,35 +2,37 @@ import React, {useState} from 'react'
 
 export default function SpecificInputs(props) {
 
-let [input,setInput]= useState('')
+let [input,setInput]= useState(props.secondLayerInput)
 
-
-function handleChange(e){
- setInput(e.target.value)
-
-}
-/** startNFinish **/
+/** INFORMATION useState HOOKS **/
 let [startNFinish1, setStartNFinish1] =useState('')
 let [startNFinish2, setStartNFinish2] =useState('')
+let [specificHeightValue, setSpecificHeightValue] =useState('')
 
-function startNFinish(e){
-    e.target.name==='StartNFinish1'? setStartNFinish1(e.target.value):setStartNFinish2(e.target.value)
- }
- console.log(props.handleClick)
+function handleChange(e){
+ e.target.name=='Specific Height'&& setSpecificHeightValue(e.target.value)
+ 
+ if(e.target.name==='StartNFinish1'){ 
+     setStartNFinish1(e.target.value)
+    }else if(e.target.name==='StartNFinish2'){
+        setStartNFinish2(e.target.value)
+    }
+}
+
+
     return (
         <div>
-            
 
-            {props.secondLayerInput==='Specific Height'&&<input onChange={handleChange} type='number'></input>}
+            {props.secondLayerInput==='Specific Height'&&<input value={specificHeightValue} name='Specific Height' onChange={handleChange} type='number'></input>}
             {props.secondLayerInput==='Start & Finish Height'&&
                 <form>
                     <input 
-                        onChange={startNFinish} 
+                        onChange={handleChange} 
                         name='StartNFinish1'
                         type='number'>
                     </input>
                     <input 
-                        onChange={startNFinish} 
+                        onChange={handleChange} 
                         name='StartNFinish2'
                         type='number'>
                     </input>

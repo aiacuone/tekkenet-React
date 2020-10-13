@@ -56,7 +56,7 @@ export default function FirstButtonLayer(props) {
             {secondLayerButtons===''? null: secondLayerButtons}
             <br/>
             <br/>
-            {secondLayerInput==''?null: <SpecificInputs secondLayerInput={secondLayerInput} character={character}/>}
+            {secondLayerInput===''?null: <SpecificInputs secondLayerInput={secondLayerInput} character={character}/>}
             {/* <SpecificInputs secondLayerInput={secondLayerInput} character={character} handleClick={handleClick2}/> */}
             
         </div>
