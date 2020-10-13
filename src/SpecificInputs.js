@@ -1,8 +1,8 @@
 import React from 'react'
-import SpecificHeight from './SpecificHeight'
-import StartNFinish from './StartNFinish'
-import SpecificFrame from './SpecificFrame'
-import FrameRange from './FrameRange'
+import SpecificHeight from './specificInputs/SpecificHeight'
+import StartNFinish from './specificInputs/StartNFinish'
+import SpecificFrame from './specificInputs/SpecificFrame'
+import FrameRange from './specificInputs/FrameRange'
 
 
 export default function SpecificInput({value}) {

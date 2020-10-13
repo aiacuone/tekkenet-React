@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function SpecificHeight() {
+export default function Tripple() {
     return (
         <div>
-            SPECIFIC HEIGHT
+            Tripple
         </div>
     )
 }

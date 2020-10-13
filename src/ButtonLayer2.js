@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import NonSpecificInput from './NonSpecificInput'
-import SpecificInput from './SpecificInput'
+import NonSpecificInputs from './NonSpecificInputs'
+import SpecificInputs from './SpecificInputs'
 
 export default function ButtonLayer2({buttonLayer1Value,buttonValues}) {
     
@@ -16,12 +16,12 @@ export default function ButtonLayer2({buttonLayer1Value,buttonValues}) {
     let buttonLayer2=buttonValues[buttonLayer1Value].map((value)=>{
     return <button value={value} onClick={handleClick}>{value.toUpperCase()}</button>
     })
-
+ 
     return (
         <div>
             {buttonLayer2}
-            {noSpecificButtonValue!==''&&<NonSpecificInput value={noSpecificButtonValue} />}
-            {specificButtonValue!==''&&<SpecificInput value={specificButtonValue} />}
+            {noSpecificButtonValue!==''&&<NonSpecificInputs value={noSpecificButtonValue} />}
+            {specificButtonValue!==''&&<SpecificInputs value={specificButtonValue} />}
         </div>
     )
 }
