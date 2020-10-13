@@ -16,7 +16,7 @@ targetName==='Specific Height'&& setSpecificHeightValue(e.target.value)
  if(targetName==='StartNFinish1'){ 
      setStartNFinish1(e.target.value)
     }else if(targetName==='StartNFinish2'){
-        setStartNFinish2(targetName)
+        setStartNFinish2(e.target.value)
     }
 
 
@@ -33,12 +33,16 @@ targetName==='Specific Height'&& setSpecificHeightValue(e.target.value)
                     <input 
                         onChange={handleChange} 
                         name='StartNFinish1'
-                        type='number'>
+                        type='number'
+                        value={startNFinish1}
+                        >
                     </input>
                     <input 
                         onChange={handleChange} 
                         name='StartNFinish2'
-                        type='number'>
+                        type='number'
+                        value={startNFinish2}
+                        >
                     </input>
                     <h3>{startNFinish1 !=='' && startNFinish2!==''? <h1>startNFinish works!</h1>:null}</h3>
                 </form>
