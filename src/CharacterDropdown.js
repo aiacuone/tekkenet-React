@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import App from './App'
+import ButtonLayer1 from './ButtonLayer1'
 
 export default function CharacterDropdown() {
     let characterArr= 
@@ -11,8 +12,8 @@ export default function CharacterDropdown() {
     return <option value={character}>{character.toUpperCase()}</option>
     
     })
-    
-    let [dropdownValue, setDropDownValue] = useState('')    
+
+    let [dropDownValue, setDropDownValue] = useState('')    
     function handleChange(e){
         setDropDownValue(e.target.value)
     }
@@ -23,6 +24,7 @@ export default function CharacterDropdown() {
                     {characterOptions}
                 </select>
             </label>
+            {dropDownValue!==''&&<ButtonLayer1 dropDownValue={dropDownValue}/>}
         </div>
     )
 }
