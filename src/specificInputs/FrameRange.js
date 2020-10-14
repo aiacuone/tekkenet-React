@@ -5,7 +5,7 @@ export default function FrameRange({dropDownValue}) {
     let [highValue,setHighValue]=useState('')
 
     function handleChange(e){
-        e.target.name=='low'?setLowValue(e.target.value):setHighValue(e.target.value)
+        e.target.name==='low'?setLowValue(e.target.value):setHighValue(e.target.value)
     }
     return (
        

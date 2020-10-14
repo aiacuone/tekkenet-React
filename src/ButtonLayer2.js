@@ -3,7 +3,7 @@ import NonSpecificInputs from './NonSpecificInputs'
 import SpecificInputs from './SpecificInputs'
 
 export default function ButtonLayer2({buttonLayer1Value,buttonValues,dropDownValue}) {
-    
+
     let [noSpecificButtonValue,setNoSpecificButtonValue]=useState('')
     let [specificButtonValue,setSpecificButtonValue]=useState('')
 
@@ -16,11 +16,15 @@ export default function ButtonLayer2({buttonLayer1Value,buttonValues,dropDownVal
     let buttonLayer2=buttonValues[buttonLayer1Value].map((value)=>{
     return <button value={value} onClick={handleClick}>{value.toUpperCase()}</button>
     })
- 
+
+    import('./characters/'+dropDownValue.toLowerCase()+'.js').then((character)=>{
+        console.log(character.moveList)
+    })
+    
     return (
         <div>
             {buttonLayer2}
-            {noSpecificButtonValue!==''&&<NonSpecificInputs value={noSpecificButtonValue} dropDownValue={dropDownValue}/>}
+            {noSpecificButtonValue!==''&&<NonSpecificInputs id='nonSpecificContainer' value={noSpecificButtonValue} dropDownValue={dropDownValue}/>}
             {specificButtonValue!==''&&<SpecificInputs value={specificButtonValue} dropDownValue={dropDownValue}/>}
         </div>
     )

@@ -9,7 +9,7 @@ import FrameRange from './specificInputs/FrameRange'
 
 
 export default function SpecificInput({value,dropDownValue}) {
-    console.log(value)
+
     return (
         <div>
             {value==='Specific Height'&&<SpecificHeight dropDownValue={dropDownValue}/>}

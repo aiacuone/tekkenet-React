@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
-export default function StartNFinish({dropDownValue}) {
-    let [value1,setValue1]=useState('')
+export default function StartNFinish({dropDownValue}) {// eslint-disable-next-line
+    let [value1,setValue1]=useState('')// eslint-disable-next-line
     let [value2,setValue2]=useState('')
 
     function handleChange(e){

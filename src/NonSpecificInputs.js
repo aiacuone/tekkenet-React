@@ -15,9 +15,12 @@ import Single from './nonSpecificInputs/Single'
 import Dual from './nonSpecificInputs/Dual'
 import Tripple from './nonSpecificInputs/Tripple'
 
+
 export default function Table({value,dropDownValue}) {
+    
     return (
         <div>
+
             {value==='Launchers'&&<Launchers dropDownValue={dropDownValue}/>}
             {value==='Launch On Counter'&&<LaunchOnCounter dropDownValue={dropDownValue}/>}
             {value==='Knockdown'&&<Knockdown dropDownValue={dropDownValue}/>}

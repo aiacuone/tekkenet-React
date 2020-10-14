@@ -1,4 +1,4 @@
-let jin = [
+export let moveList = [
     {
       "Command": "in rage b+1+2 ",
       "Hit level": "h ",
