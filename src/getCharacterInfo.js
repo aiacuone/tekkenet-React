@@ -9,33 +9,7 @@ export let getCharacterInfo={
 
 
 
-  values : {
-    name:'Values',
-    function:function(key){
-      let array = [];
-      for(let i=0; i<jin.length; i++){
-        array.push(jin[i][key])
-      }
-    },
-  },
-  
 
-
-
-
-
-
-  numberOf : {
-    name:'Number Of',
-    function:function(variable){
-      let array = [];
-      for(let i=0; i<jin.length; i++){
-        if(jin[i][variable] !== ""){
-        array.push(jin[i][variable])
-        }
-      }
-    } 
-  },
 
 
 
@@ -46,15 +20,15 @@ export let getCharacterInfo={
 
   startNFinish: {
     name:'Start & Finish',
-    function:function(a,b){
-      let arr = [];
+    function:function(a,b,moveList){
+      let arr = [];// eslint-disable-next-line
       let regex = new RegExp( "^\\" + a + ".+" + "\\" + b + "\\s$");
-      for(let i=0; i<jin.length; i++){
-        if(regex.test(jin[i]["Hit level"])){
-          if(jin[i]["Hit level"].length <= 8){arr.push(jin[i])}
+      for(let i=0; i<moveList.length; i++){
+        if(regex.test(moveList[i]["Hit level"])){
+          if(moveList[i]["Hit level"].length <= 8){arr.push(moveList[i])}
         }
       }
-      setTimeout(function(){buildTable({...arr})},0)
+      console.log(arr)
     }
   },
   
@@ -67,15 +41,15 @@ export let getCharacterInfo={
 
   unSafe:{
     name:'UnSafe',
-    function:function(){ 
+    function:function(moveList){ 
       let arr=[];
-      for(let i=0; i<window[characterDropdown.value].length; i++){
-        let filtered = window[characterDropdown.value][i]["Block frame"].replace("~"," ");
+      for(let i=0; i<moveList.length; i++){
+        let filtered = moveList[i]["Block frame"].replace("~"," ");
         if(filtered.substring(0,3) < -9){
-          arr.push(window[characterDropdown.value][i]);
+          arr.push(moveList[i]);
         }
       }
-      setTimeout(function(){buildTable({...arr})},0)
+      console.log(arr)
     }
   },
 
@@ -90,18 +64,17 @@ export let getCharacterInfo={
 
   safe:{
     name:'Safe',
-    function:function(){ 
+    function:function(moveList){ 
       let arr=[]
-        
-      for(let i=0; i<window[characterDropdown.value].length; i++){
-        filteredScript = window[characterDropdown.value][i]["Block frame"].replace("~"," ")
+      for(let i=0; i<moveList.length; i++){
+        let filteredScript = moveList[i]["Block frame"].replace("~"," ")
           if(filteredScript.substring(0,3) > -10){
               if(filteredScript !== ""){
-                arr.push(window[characterDropdown.value][i])
+                arr.push(moveList[i])
               }
           }           
       }
-      setTimeout(function(){buildTable({...arr})},0)
+    console.log(arr)
     }
   },
 
@@ -114,16 +87,15 @@ export let getCharacterInfo={
 
   specFrames:{
     name:'Specific Frames',
-    function(frames){
+    function(frames,moveList){
       let arr=[];
-
-      for(let i=0; i<window[characterDropdown.value].length; i++){
-        let filteredMove = window[characterDropdown.value][i]["Start up frame"].replace("~"," ")
-        if(filteredMove.substring(0,2) == frames){ 
-          arr.push(window[characterDropdown.value][i])
+      for(let i=0; i<moveList.length; i++){
+        let filteredMove = moveList[i]["Start up frame"].replace("~"," ")
+        if(filteredMove.substring(0,2) === frames){ 
+          arr.push(moveList[i])
         }
       }
-      setTimeout(function(){buildTable({...arr})},500)
+      console.log(arr)
     }
   },
 
@@ -136,16 +108,15 @@ export let getCharacterInfo={
   
   frameRange: {
     name:'Frame Range',
-    function:function(min,max){
+    function:function(min,max,moveList){
       let arr = [];
-    
-      for(let i=0; i<window[characterDropdown.value].length; i++){
-        filteredMove = window[characterDropdown.value][i]["Start up frame"].replace("~"," ")
+      for(let i=0; i<moveList.length; i++){
+        let filteredMove = moveList[i]["Start up frame"].replace("~"," ")
         if(filteredMove.substring(0,3) >= min && filteredMove.substring(0,3) <= max){ 
-          arr.push(window[characterDropdown.value][i])
+          arr.push(moveList[i])
         }
       }
-      setTimeout(function(){buildTable({...arr})},500)
+      console.log(arr)
     }
   },
 
@@ -159,15 +130,15 @@ export let getCharacterInfo={
 
   plusOnBlock: {
     name:'Plus on Block',
-    function:function(){ 
+    function:function(moveList){ 
       let arr = [];
-      for(let i=0; i<window[characterDropdown.value].length; i++){
-        let filteredMove = window[characterDropdown.value][i]["Block frame"].replace("~"," ")
+      for(let i=0; i<moveList.length; i++){
+        let filteredMove = moveList[i]["Block frame"].replace("~"," ")
         if(filteredMove.substring(0,3) > 0){
-            arr.push(window[characterDropdown.value][i])
+            arr.push(moveList[i])
         }       
       }
-      setTimeout(function(){buildTable({...arr})},0)
+      console.log(arr)
     }
   },
   
@@ -181,15 +152,15 @@ export let getCharacterInfo={
 
   hitLevel: {
     name:'Hit Level',
-    function:function(level){
+    function:function(level,moveList){
       let arr = []
-      for(let i=0; i<window[characterDropdown.value].length; i++){
-        let filteredMove = window[characterDropdown.value][i]["Hit level"].replace(" ","")
-        if(filteredMove == level) {
-          arr.push(window[characterDropdown.value][i])
+      for(let i=0; i<moveList.length; i++){
+        let filteredMove = moveList[i]["Hit level"].replace(" ","")
+        if(filteredMove === level) {
+          arr.push(moveList[i])
         }
       }
-      setTimeout(function(){buildTable({...arr})},0)
+      console.log(arr)
     }
   },
 
@@ -204,15 +175,15 @@ export let getCharacterInfo={
 
   counterLaunch: {
     name:'Launch on Counter',
-    function:function(){
+    function:function(moveList){
       let regex = /launch/i
       let arr = [];
-      for(let i=0; i<window[characterDropdown.value].length; i++){
-        if(regex.test(window[characterDropdown.value][i]["Counter hit frame"])){
-          arr.push(window[characterDropdown.value][i])       
+      for(let i=0; i<moveList.length; i++){
+        if(regex.test(moveList[i]["Counter hit frame"])){
+          arr.push(moveList[i])       
         }   
       }
-      setTimeout(function(){buildTable({...arr})},0)
+      console.log(arr)
     }
   },
 
@@ -225,16 +196,15 @@ export let getCharacterInfo={
 
   launch: {
     name:'Launch',
-    function:function(){
+    function:function(moveList){
       let regex = /launch/i
       let arr = [];
-  
-      for(let i=0; i<window[characterDropdown.value].length; i++){
-        if(regex.test(window[characterDropdown.value][i]["Hit frame"])){
-            arr.push(window[characterDropdown.value][i])       
+      for(let i=0; i<moveList.length; i++){
+        if(regex.test(moveList[i]["Hit frame"])){
+            arr.push(moveList[i])       
         }   
       }
-      setTimeout(function(){buildTable({...arr})},0)
+      console.log(arr)
     }
   },
 
@@ -248,15 +218,15 @@ export let getCharacterInfo={
    
   counterKND: {
     name:'Knockdown on Counter',
-    function:function(){
+    function:function(moveList){
       let regex = /knd/i
       let arr = [];
-      for(let i=0; i<window[characterDropdown.value].length; i++){
-        if(regex.test(window[characterDropdown.value][i]["Counter hit frame"])){
-          arr.push(window[characterDropdown.value][i])       
+      for(let i=0; i<moveList.length; i++){
+        if(regex.test(moveList[i]["Counter hit frame"])){
+          arr.push(moveList[i])       
         }   
       }
-      setTimeout(function(){buildTable({...arr})},0)
+      console.log(arr)
     }
   },
 
@@ -268,19 +238,19 @@ export let getCharacterInfo={
 
 
 
-    KND: {
-      name:'Knockdown',
-      function:function(){
-        let regex = /knd/i
-        let arr = [];
-        for(let i=0; i<window[characterDropdown.value].length; i++){
-            if(regex.test(window[characterDropdown.value][i]["Hit frame"])){
-                arr.push(window[characterDropdown.value][i])       
-            }   
-        }
-        setTimeout(function(){buildTable({...arr})},0)
+  KND: {
+    name:'Knockdown',
+    function:function(moveList){
+      let regex = /knd/i
+      let arr = [];
+      for(let i=0; i<moveList.length; i++){
+          if(regex.test(moveList[i]["Hit frame"])){
+              arr.push(moveList[i])       
+          }   
       }
-    },
+      console.log(arr)
+    }
+  },
 
 
     
@@ -291,20 +261,19 @@ export let getCharacterInfo={
 
 
 
-    powerCrush: {
-      name:'Power Crush',
-      function:function(){
-        let regex = /power crush/i
-        let arr = [];
-  
-        for(let i=0; i<window[characterDropdown.value].length; i++){
-            if(regex.test(window[characterDropdown.value][i]["Notes"])){
-                arr.push(window[characterDropdown.value][i])       
-            }   
-        }
-        setTimeout(function(){buildTable({...arr})},0)
+  powerCrush: {
+    name:'Power Crush',
+    function:function(moveList){
+      let regex = /power crush/i
+      let arr = [];
+      for(let i=0; i<moveList.length; i++){
+          if(regex.test(moveList[i]["Notes"])){
+              arr.push(moveList[i])       
+          }   
       }
-    },
+      console.log(arr)
+    }
+  },
   
 
     
@@ -317,15 +286,15 @@ export let getCharacterInfo={
 
   wallBounce: {
     name:'Wall Bounce',
-    function:function(){
+    function:function(moveList){
       let regex = /wall bounce/i
       let arr = [];
-      for(let i=0; i<window[characterDropdown.value].length; i++){
-        if(regex.test(window[characterDropdown.value][i]["Notes"])){
-          arr.push(window[characterDropdown.value][i])       
+      for(let i=0; i<moveList.length; i++){
+        if(regex.test(moveList[i]["Notes"])){
+          arr.push(moveList[i])       
         }   
       }
-      setTimeout(function(){buildTable({...arr})},0)
+      console.log(arr)
     }
   },
 
@@ -337,20 +306,19 @@ export let getCharacterInfo={
 
 
 
-    homing: {
-      name:'Homing',
-      function:function(){
-        let regex = /homing/i
-        let arr = [];
-  
-        for(let i=0; i<window[characterDropdown.value].length; i++){
-            if(regex.test(window[characterDropdown.value][i]["Notes"])){
-                arr.push(window[characterDropdown.value][i])       
-            }   
-        }
-        setTimeout(function(){buildTable({...arr})},0)
+  homing: {
+    name:'Homing',
+    function:function(moveList){
+      let regex = /homing/i
+      let arr = [];
+      for(let i=0; i<moveList.length; i++){
+        if(regex.test(moveList[i]["Notes"])){
+          arr.push(moveList[i])       
+        }   
       }
-    },
+      console.log(arr)
+    }
+  },
 
     
 
@@ -362,20 +330,19 @@ export let getCharacterInfo={
 
   single: {
     name:'Single',
-    function:function(){
-        let regex = /,/i
-        let arr = [];
-  
-        for(let i=0; i<window[characterDropdown.value].length; i++){
-            if(regex.test(window[characterDropdown.value][i]["Damage"])== false){
-                if(window[characterDropdown.value][i]["Damage"] !== ""){
-                    arr.push(window[characterDropdown.value][i])
-                }       
-            }   
-        }
-        setTimeout(function(){buildTable({...arr})},0)
+    function:function(moveList){
+      let regex = /,/i
+      let arr = [];
+      for(let i=0; i<moveList.length; i++){
+        if(regex.test(moveList[i]["Damage"])=== false){
+          if(moveList[i]["Damage"] !== ""){
+              arr.push(moveList[i])
+          }       
+        }   
       }
-    },
+      console.log(arr)
+    }
+  },
 
     
 
@@ -385,22 +352,21 @@ export let getCharacterInfo={
 
 
 
-    dual: {
-      name:'Dual',
-      function:function(){
-        let regex = /,/ig
-        let arr = [];
-  
-        for(let i=0; i<window[characterDropdown.value].length; i++){
-            if(((window[characterDropdown.value][i]["Damage"]).match(regex) || []).length == 1){
-                if(window[characterDropdown.value][i]["Damage"] !== ""){
-                    arr.push(window[characterDropdown.value][i])
-                }       
-            }   
-        }
-        setTimeout(function(){buildTable({...arr})},0)
+  dual: {
+    name:'Dual',
+    function:function(moveList){
+      let regex = /,/ig
+      let arr = [];
+      for(let i=0; i<moveList.length; i++){
+        if(((moveList[i]["Damage"]).match(regex) || []).length === 1){
+          if(moveList[i]["Damage"] !== ""){
+            arr.push(moveList[i])
+          }       
+        }   
       }
-    },
+      console.log(arr)
+    }
+  },
 
     
 
@@ -409,22 +375,21 @@ export let getCharacterInfo={
 
 
 
-    tri: {
-      name:'Tripple Moves',
-      function:function(){
-        let regex = /,/ig
-        let arr = [];
-  
-        for(let i=0; i<window[characterDropdown.value].length; i++){
-            if(((window[characterDropdown.value][i]["Damage"]).match(regex) || []).length == 2){
-                if(window[characterDropdown.value][i]["Damage"] !== ""){
-                    arr.push(window[characterDropdown.value][i])
-                }       
-            }   
-        }
-        setTimeout(function(){buildTable({...arr})},0)
+  tri: {
+    name:'Tripple Moves',
+    function:function(moveList){
+      let regex = /,/ig
+      let arr = [];
+      for(let i=0; i<moveList.length; i++){
+        if(((moveList[i]["Damage"]).match(regex) || []).length === 2){
+          if(moveList[i]["Damage"] !== ""){
+            arr.push(moveList[i])
+          }       
+        }   
       }
-    },
+      console.log(arr)
+    }
+  },
  
     
 
@@ -436,13 +401,12 @@ export let getCharacterInfo={
    
   rageArt: {
     name:'Rage Art',
-    function:function(){
+    function:function(moveList){
     let arr = [];
-  
-      for(let i=0; i<window[characterDropdown.value].length; i++){
-        if(window[characterDropdown.value][i]["Notes"] == "Rage art"){arr.push(window[characterDropdown.value][i])}
+      for(let i=0; i<moveList.length; i++){
+        if(moveList[i]["Notes"] === "Rage art"){arr.push(moveList[i])}
       }
-      setTimeout(function(){buildTable({...arr})},0)
+      console.log(arr)
     }
   },
 
@@ -458,16 +422,21 @@ export let getCharacterInfo={
   
   rageDrive: {
     name:'Rage Drive',
-    function:function(){
+    function:function(moveList){
       let arr = [];
-      for(let i=0; i<window[characterDropdown.value].length; i++){
-        if(window[characterDropdown.value][i]["Notes"] == "Rage drive"){
-          arr.push(window[characterDropdown.value][i])
+      for(let i=0; i<moveList.length; i++){
+        if(moveList[i]["Notes"] === "Rage drive"){
+          arr.push(moveList[i])
         }
       }
-      setTimeout(function(){buildTable({...arr})},0)
+      console.log(arr)
     }
-  },
+  }
+
+}
+
+export default getCharacterInfo;
+  // ,
 
     
 
@@ -477,21 +446,21 @@ export let getCharacterInfo={
 
 
    
-  AveSingleDam: function(){
-      let array = [];
-      let regex = /,/ig
+  // AveSingleDam: function(){
+  //     let array = [];
+  //     let regex = /,/ig
   
-      for(let i=0; i<window[characterDropdown.value].length; i++){
-        if(((window[characterDropdown.value][i]["Damage"]).match(regex) || []).length == 0){
-          if(window[characterDropdown.value][i]["Damage"] !== ""){
-            array.push(parseInt(window[characterDropdown.value][i]["Damage"].substring(0,2)))
-          }
-        }
-      }
-      ave = array.reduce( (acc,val) => (acc+val) ) / array.length;
-      console.log(ave)
-      return ave
-    },
+  //     for(let i=0; i<window[characterDropdown.value].length; i++){
+  //       if(((window[characterDropdown.value][i]["Damage"]).match(regex) || []).length == 0){
+  //         if(window[characterDropdown.value][i]["Damage"] !== ""){
+  //           array.push(parseInt(window[characterDropdown.value][i]["Damage"].substring(0,2)))
+  //         }
+  //       }
+  //     }
+  //     ave = array.reduce( (acc,val) => (acc+val) ) / array.length;
+  //     console.log(ave)
+  //     return ave
+  //   },
   
 
     
@@ -502,43 +471,43 @@ export let getCharacterInfo={
 
 
   
-    AveDualDam: function(){
-      let tempArray1 = [];
-      let tempArray2 = [];
-      let tempAdd = []
-      let regex = /,/ig
+  //   AveDualDam: function(){
+  //     let tempArray1 = [];
+  //     let tempArray2 = [];
+  //     let tempAdd = []
+  //     let regex = /,/ig
   
-      for(let i=0; i<jin.length; i++){
+  //     for(let i=0; i<jin.length; i++){
         
-        //matches how many moves are in the sequence using the ',' in "Damage"
-        if(((jin[i]["Damage"]).match(regex) || []).length == 1){
-          if(jin[i]["Damage"] !== ""){
+  //       //matches how many moves are in the sequence using the ',' in "Damage"
+  //       if(((jin[i]["Damage"]).match(regex) || []).length == 1){
+  //         if(jin[i]["Damage"] !== ""){
             
-            //creates array with elements, seperated by commas
-            tempArray1 = jin[i]["Damage"].split(`,`)
+  //           //creates array with elements, seperated by commas
+  //           tempArray1 = jin[i]["Damage"].split(`,`)
             
-            //loops through array, converts each element into numbers
-            for(let i = 0; i<tempArray1.length; i++){
-              tempArray2.push(parseInt(tempArray1[i]))
-            }
+  //           //loops through array, converts each element into numbers
+  //           for(let i = 0; i<tempArray1.length; i++){
+  //             tempArray2.push(parseInt(tempArray1[i]))
+  //           }
             
-            //finds average of elements within array, and pushes into seperate array
-            let add = tempArray2.reduce( (acc,val) => (acc+val) );
-            tempAdd.push(add)
+  //           //finds average of elements within array, and pushes into seperate array
+  //           let add = tempArray2.reduce( (acc,val) => (acc+val) );
+  //           tempAdd.push(add)
   
-            //finds average of all dual moves
-            ave = tempAdd.reduce( (acc,val) => (acc+val) ) / tempAdd.length;
+  //           //finds average of all dual moves
+  //           ave = tempAdd.reduce( (acc,val) => (acc+val) ) / tempAdd.length;
             
-            //resets the temporary arrays for the next commands
-            tempArray1 = [];
-            tempArray2 = [];
+  //           //resets the temporary arrays for the next commands
+  //           tempArray1 = [];
+  //           tempArray2 = [];
             
-          }
-        }
-      }
-      console.log(ave)
-    },
-    // AveDualDam()
+  //         }
+  //       }
+  //     }
+  //     console.log(ave)
+  //   },
+  //   // AveDualDam()
   
 
     
@@ -549,44 +518,44 @@ export let getCharacterInfo={
 
 
     
-  AveTriDam: function(){
+  // AveTriDam: function(){
   
-      let tempArray1 = [];
-      let tempArray2 = [];
-      let tempAdd = []
-      let regex = /,/ig
+  //     let tempArray1 = [];
+  //     let tempArray2 = [];
+  //     let tempAdd = []
+  //     let regex = /,/ig
   
-      for(let i=0; i<jin.length; i++){
+  //     for(let i=0; i<jin.length; i++){
         
-        //matches how many moves are in the sequence using the ',' in "Damage"
-        if(((jin[i]["Damage"]).match(regex) || []).length == 2){
-          if(jin[i]["Damage"] !== ""){
+  //       //matches how many moves are in the sequence using the ',' in "Damage"
+  //       if(((jin[i]["Damage"]).match(regex) || []).length == 2){
+  //         if(jin[i]["Damage"] !== ""){
             
-            //creates array with elements, seperated by commas
-            tempArray1 = jin[i]["Damage"].split(`,`)
+  //           //creates array with elements, seperated by commas
+  //           tempArray1 = jin[i]["Damage"].split(`,`)
             
-            //loops through array, converts each element into numbers
-            for(let i = 0; i<tempArray1.length; i++){
-              tempArray2.push(parseInt(tempArray1[i]))
-            }
+  //           //loops through array, converts each element into numbers
+  //           for(let i = 0; i<tempArray1.length; i++){
+  //             tempArray2.push(parseInt(tempArray1[i]))
+  //           }
             
-            //finds average of elements within array, and pushes into seperate array
-            let add = tempArray2.reduce( (acc,val) => (acc+val) );
-            tempAdd.push(add)
+  //           //finds average of elements within array, and pushes into seperate array
+  //           let add = tempArray2.reduce( (acc,val) => (acc+val) );
+  //           tempAdd.push(add)
           
-            //finds average of all dual moves
-            ave = tempAdd.reduce( (acc,val) => (acc+val) ) / tempAdd.length;
+  //           //finds average of all dual moves
+  //           ave = tempAdd.reduce( (acc,val) => (acc+val) ) / tempAdd.length;
             
-            //resets the temporary arrays for the next commands
-            tempArray1 = [];
-            tempArray2 = [];
+  //           //resets the temporary arrays for the next commands
+  //           tempArray1 = [];
+  //           tempArray2 = [];
             
-          }
-        }
-      }
-      console.log(ave)
-    },
-    // AveTriDam()
+  //         }
+  //       }
+  //     }
+  //     console.log(ave)
+  //   },
+  //   // AveTriDam()
   
 
     
@@ -596,54 +565,54 @@ export let getCharacterInfo={
 
 
   
-    AveDualDamAtxFrame: function(frames){
-      singleInputForm.hidden= false
+  //   AveDualDamAtxFrame: function(frames){
+  //     singleInputForm.hidden= false
 
-      let tempArray1 = [];
-      let tempArray2 = [];
-      let tempAdd = []
-      let regex = /,/ig
-      let frameRegex = /(\D*)(\d{1,2})(.*)/ig
-      let newAve = "";
+  //     let tempArray1 = [];
+  //     let tempArray2 = [];
+  //     let tempAdd = []
+  //     let regex = /,/ig
+  //     let frameRegex = /(\D*)(\d{1,2})(.*)/ig
+  //     let newAve = "";
       
-      for(let i=0; i<jin.length; i++){
+  //     for(let i=0; i<jin.length; i++){
   
-          //matches the argument with specific range of frames
-          if(parseInt(jin[i]["Start up frame"].replace(frameRegex, "$2"))== frames){ 
+  //         //matches the argument with specific range of frames
+  //         if(parseInt(jin[i]["Start up frame"].replace(frameRegex, "$2"))== frames){ 
     
-          //matches how many moves are in the sequence using the ',' in "Damage"
-          if(((jin[i]["Damage"]).match(regex) || []).length == 1){
-            if(jin[i]["Damage"] !== ""){
+  //         //matches how many moves are in the sequence using the ',' in "Damage"
+  //         if(((jin[i]["Damage"]).match(regex) || []).length == 1){
+  //           if(jin[i]["Damage"] !== ""){
             
-              //creates array with elements, seperated by commas
-              tempArray1 = jin[i]["Damage"].split(`,`)
-              // console.log(tempArray1)
+  //             //creates array with elements, seperated by commas
+  //             tempArray1 = jin[i]["Damage"].split(`,`)
+  //             // console.log(tempArray1)
   
-              //loops through array, converts each element into numbers
-              for(let i = 0; i<tempArray1.length; i++){
-                tempArray2.push(parseInt(tempArray1[i]))
-              }
+  //             //loops through array, converts each element into numbers
+  //             for(let i = 0; i<tempArray1.length; i++){
+  //               tempArray2.push(parseInt(tempArray1[i]))
+  //             }
               
-              //adds elements within array, and pushes into seperate array
-              let add = tempArray2.reduce( (acc,val) => (acc+val) );
-              tempAdd.push(add)
-              // console.log(add)
-              // console.log(tempAdd)
+  //             //adds elements within array, and pushes into seperate array
+  //             let add = tempArray2.reduce( (acc,val) => (acc+val) );
+  //             tempAdd.push(add)
+  //             // console.log(add)
+  //             // console.log(tempAdd)
   
-              //finds average of all dual moves
-              newAve = tempAdd.reduce( (acc,val) => (acc+val) ) / tempAdd.length;
+  //             //finds average of all dual moves
+  //             newAve = tempAdd.reduce( (acc,val) => (acc+val) ) / tempAdd.length;
               
   
-              //resets the temporary arrays for the next commands
-              tempArray1 = [];
-              tempArray2 = [];
-            }
-          }
-        }
-      }
-      console.log(newAve)
-    },
-    // AveDualDamAtxFrame(10)
+  //             //resets the temporary arrays for the next commands
+  //             tempArray1 = [];
+  //             tempArray2 = [];
+  //           }
+  //         }
+  //       }
+  //     }
+  //     console.log(newAve)
+  //   },
+  //   // AveDualDamAtxFrame(10)
   
 
     
@@ -653,54 +622,81 @@ export let getCharacterInfo={
 
 
   
-    AveTriDamAtxFrame: function(frames){
-      singleInputForm.hidden=false
+  //   AveTriDamAtxFrame: function(frames){
+  //     singleInputForm.hidden=false
 
-      let tempArray1 = [];
-      let tempArray2 = [];
-      let tempAdd = []
-      let regex = /,/ig
-      let frameRegex = /(\D*)(\d{1,2})(.*)/ig
-      let newAve = "";
+  //     let tempArray1 = [];
+  //     let tempArray2 = [];
+  //     let tempAdd = []
+  //     let regex = /,/ig
+  //     let frameRegex = /(\D*)(\d{1,2})(.*)/ig
+  //     let newAve = "";
       
-      for(let i=0; i<jin.length; i++){
+  //     for(let i=0; i<jin.length; i++){
   
-          //matches the argument with specific range of frames
-          if(parseInt(jin[i]["Start up frame"].replace(frameRegex, "$2"))== frames){ 
+  //         //matches the argument with specific range of frames
+  //         if(parseInt(jin[i]["Start up frame"].replace(frameRegex, "$2"))== frames){ 
     
-          //matches how many moves are in the sequence using the ',' in "Damage"
-          if(((jin[i]["Damage"]).match(regex) || []).length == 2){
-            if(jin[i]["Damage"] !== ""){
+  //         //matches how many moves are in the sequence using the ',' in "Damage"
+  //         if(((jin[i]["Damage"]).match(regex) || []).length == 2){
+  //           if(jin[i]["Damage"] !== ""){
             
-              //creates array with elements, seperated by commas
-              tempArray1 = jin[i]["Damage"].split(`,`)
-              // console.log(tempArray1)
+  //             //creates array with elements, seperated by commas
+  //             tempArray1 = jin[i]["Damage"].split(`,`)
+  //             // console.log(tempArray1)
   
-              //loops through array, converts each element into numbers
-              for(let i = 0; i<tempArray1.length; i++){
-                tempArray2.push(parseInt(tempArray1[i]))
-              }
+  //             //loops through array, converts each element into numbers
+  //             for(let i = 0; i<tempArray1.length; i++){
+  //               tempArray2.push(parseInt(tempArray1[i]))
+  //             }
               
-              //adds elements within array, and pushes into seperate array
-              let add = tempArray2.reduce( (acc,val) => (acc+val) );
-              tempAdd.push(add)
-              // console.log(add)
-              // console.log(tempAdd)
+  //             //adds elements within array, and pushes into seperate array
+  //             let add = tempArray2.reduce( (acc,val) => (acc+val) );
+  //             tempAdd.push(add)
+  //             // console.log(add)
+  //             // console.log(tempAdd)
   
-              //finds average of all dual moves
-              newAve = tempAdd.reduce( (acc,val) => (acc+val) ) / tempAdd.length;
+  //             //finds average of all dual moves
+  //             newAve = tempAdd.reduce( (acc,val) => (acc+val) ) / tempAdd.length;
               
   
-              //resets the temporary arrays for the next commands
-              tempArray1 = [];
-              tempArray2 = [];
-            }
-          }
-        }
-      }
-      console.log(newAve)
-    }
-  // AveTriDamAtxFrame(10)
+  //             //resets the temporary arrays for the next commands
+  //             tempArray1 = [];
+  //             tempArray2 = [];
+  //           }
+  //         }
+  //       }
+  //     }
+  //     console.log(newAve)
+  //   }
+  // // AveTriDamAtxFrame(10)
   
-  }   
+  
 
+  // values : {
+  //   name:'Values',
+  //   function:function(key){
+  //     let array = [];
+  //     for(let i=0; i<jin.length; i++){
+  //       array.push(jin[i][key])
+  //     }
+  //   },
+  // },
+  
+
+
+
+
+
+
+  // numberOf : {
+  //   name:'Number Of',
+  //   function:function(variable){
+  //     let array = [];
+  //     for(let i=0; i<jin.length; i++){
+  //       if(jin[i][variable] !== ""){
+  //       array.push(jin[i][variable])
+  //       }
+  //     }
+  //   } 
+  // },
