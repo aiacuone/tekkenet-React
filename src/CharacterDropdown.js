@@ -4,12 +4,7 @@ import characters from './characters'
 
 export default function CharacterDropdown() {
 
-    let characterArr= 
-    [
-        '','Akuma','Alisa','Anna','ArmorKing','Asuka','Bob','Bryan','Claudio','DevilJin','Dragunov','Eddy','Eliza','Fahkumram','Feng','Ganryu','Geese','Gigas','Heihachi','Hwoarang','Jack','Jin','Josie','Julia','Katarina','Kazumi','Kazuya','King','Kuma','Lars','Law','Lee','Lei','Leo','Leroy','Lili','LuckyChloe','Marduk','MasterRaven','Miguel','Negan','Nina','Noctis','Paul','Shaheen','Steve','Xiaoyu','Yoshimitsu','Zafina'
-    ]
-
-    let characterOptions = characterArr.map((character)=>{
+    let characterOptions = Object.keys(characters).map((character)=>{
     return <option value={character}>{character.toUpperCase()}</option>
     
     })
