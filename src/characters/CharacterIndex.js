@@ -100,10 +100,10 @@ export default function CharacterIndex() {
         yoshimitsu:{moveList:yoshimitsu},
         zafina:{moveList:zafina}
         }
-    }
+    
     return (
         <div>
             
         </div>
     )
-
+}
