@@ -1,7 +1,7 @@
-Height:
+
 export let getCharacterMoves={
 
-    height:{
+    Height:{
 
         specificHeight:{
             name:'Specific Height',
@@ -35,7 +35,7 @@ export let getCharacterMoves={
     },
 
 
-    launch:{
+    Launch:{
 
         launch: {
             name:'Normal Launch',
@@ -69,9 +69,9 @@ export let getCharacterMoves={
     },
 
 
-    frames:{
+    Frames:{
 
-        specFrames:{
+        specificFrames:{
             name:'Specify Frames',
             button:'Specify Frames',
             function(frames,moveList){
@@ -103,7 +103,7 @@ export let getCharacterMoves={
     },
 
 
-    knockdown:{
+    Knockdown:{
 
         knockdown: {
             name:'Normal Knockdown',
@@ -137,7 +137,7 @@ export let getCharacterMoves={
     },
 
 
-    rage:{
+    Rage:{
 
         rageArt: {
             name:'Rage Art',
@@ -167,7 +167,7 @@ export let getCharacterMoves={
     },
 
 
-    safety:{
+    Safety:{
 
         safe:{
             name:'Safe on Block',
@@ -203,7 +203,7 @@ export let getCharacterMoves={
     },
 
 
-    situational:{
+    Situational:{
         
         plusOnBlock: {
             name:'Plus on Block',
@@ -267,7 +267,7 @@ export let getCharacterMoves={
     },
 
 
-    strings:{
+    Strings:{
 
         single: {
             name:'Single',

@@ -3,7 +3,7 @@ import ButtonLayer1 from './ButtonLayer1'
 import characters from './characters'
 
 export default function CharacterDropdown() {
-    console.log(characters)
+
     let characterArr= 
     [
         '','Akuma','Alisa','Anna','ArmorKing','Asuka','Bob','Bryan','Claudio','DevilJin','Dragunov','Eddy','Eliza','Fahkumram','Feng','Ganryu','Geese','Gigas','Heihachi','Hwoarang','Jack','Jin','Josie','Julia','Katarina','Kazumi','Kazuya','King','Kuma','Lars','Law','Lee','Lei','Leo','Leroy','Lili','LuckyChloe','Marduk','MasterRaven','Miguel','Negan','Nina','Noctis','Paul','Shaheen','Steve','Xiaoyu','Yoshimitsu','Zafina'

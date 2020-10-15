@@ -17,25 +17,26 @@ import Tripple from './nonSpecificInputs/Tripple'
 
 
 export default function Table({value,dropDownValue}) {
+    console.log(value, 'value')
     return (
         
         <div>
             {<h1>{dropDownValue.toUpperCase()}</h1>}
-            {value==='Launchers'&&<Launchers dropDownValue={dropDownValue}/>}
-            {value==='Launch On Counter'&&<LaunchOnCounter dropDownValue={dropDownValue}/>}
-            {value==='Knockdown'&&<Knockdown dropDownValue={dropDownValue}/>}
-            {value==='Counter Knockdown'&&<CounterKnockdown dropDownValue={dropDownValue}/>}
-            {value==='Rage Art'&&<RageArt dropDownValue={dropDownValue}/>}
-            {value==='Rage Drive'&&<RageDrive dropDownValue={dropDownValue}/>}
-            {value==='Safe'&&<Safe dropDownValue={dropDownValue}/>}
-            {value==='Unsafe'&&<UnSafe dropDownValue={dropDownValue}/>}
-            {value==='+OnBlock'&&<PlusOnBlock dropDownValue={dropDownValue}/>}
-            {value==='PowerCrush'&&<PowerCrush dropDownValue={dropDownValue}/>}
-            {value==='Wall Bounce'&&<WallBounce dropDownValue={dropDownValue}/>}
-            {value==='Homing'&&<Homing dropDownValue={dropDownValue}/>}
-            {value==='Single'&&<Single dropDownValue={dropDownValue}/>}
-            {value==='Dual'&&<Dual dropDownValue={dropDownValue}/>}
-            {value==='Tripple'&&<Tripple dropDownValue={dropDownValue}/>}
+            {value==='launch'&&<Launchers dropDownValue={dropDownValue}/>}
+            {value==='counterLaunch'&&<LaunchOnCounter dropDownValue={dropDownValue}/>}
+            {value==='knockdown'&&<Knockdown dropDownValue={dropDownValue}/>}
+            {value==='counterKnockdown'&&<CounterKnockdown dropDownValue={dropDownValue}/>}
+            {value==='rageArt'&&<RageArt dropDownValue={dropDownValue}/>}
+            {value==='rageDrive'&&<RageDrive dropDownValue={dropDownValue}/>}
+            {value==='safe'&&<Safe dropDownValue={dropDownValue}/>}
+            {value==='unSafe'&&<UnSafe dropDownValue={dropDownValue}/>}
+            {value==='plusOnBlock'&&<PlusOnBlock dropDownValue={dropDownValue}/>}
+            {value==='powerCrush'&&<PowerCrush dropDownValue={dropDownValue}/>}
+            {value==='wallBounce'&&<WallBounce dropDownValue={dropDownValue}/>}
+            {value==='homing'&&<Homing dropDownValue={dropDownValue}/>}
+            {value==='single'&&<Single dropDownValue={dropDownValue}/>}
+            {value==='dual'&&<Dual dropDownValue={dropDownValue}/>}
+            {value==='tripple'&&<Tripple dropDownValue={dropDownValue}/>}
         </div>
     )
 }
