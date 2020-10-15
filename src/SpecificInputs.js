@@ -12,6 +12,7 @@ export default function SpecificInput({value,dropDownValue}) {
 
     return (
         <div>
+            {<h1>{dropDownValue.toUpperCase()}</h1>}
             {value==='Specific Height'&&<SpecificHeight dropDownValue={dropDownValue}/>}
             {value==='Start & Finish Height'&&<StartNFinish dropDownValue={dropDownValue}/>}
             {value==='Specific Frame'&&<SpecificFrame dropDownValue={dropDownValue}/>}

@@ -8,7 +8,7 @@ export default function SpecificHeight({dropDownValue}) {// eslint-disable-next-
     
     return (
         <div>
-            <h1>SPECIFIC HEIGHT</h1>
+            <h3>SPECIFIC HEIGHT</h3>
             <label>LOW<input type='radio' value='low' name='height' onChange={handleChange}></input></label>
             <label>MED<input type='radio' value='med' name='height' onChange={handleChange}></input></label>
             <label>HIGH<input type='radio' value='high' name='height' onChange={handleChange}></input></label>

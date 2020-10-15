@@ -10,7 +10,7 @@ export default function FrameRange({dropDownValue}) {
     return (
        
         <div>
-            <h1>FRAME RANGE</h1>
+            <h3>FRAME RANGE</h3>
             <label>LOW<input type='number' value={lowValue} name='low' min='0' onChange={handleChange}></input></label>
             <label>HIGH<input type='number' value={highValue} name='high' min='0' onChange={handleChange}></input></label>
         </div>

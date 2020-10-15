@@ -7,7 +7,7 @@ export default function SpecificFrame({dropDownValue}) {
     }
     return (
         <div>
-            <h1>SPECIFIC FRAME</h1>
+            <h3>SPECIFIC FRAME</h3>
             <input type='number' onChange={handleChange} value={value}></input>
         </div>
     )

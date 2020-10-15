@@ -20,7 +20,7 @@ export default function Table({value,dropDownValue}) {
     
     return (
         <div>
-
+            {<h1>{dropDownValue.toUpperCase()}</h1>}
             {value==='Launchers'&&<Launchers dropDownValue={dropDownValue}/>}
             {value==='Launch On Counter'&&<LaunchOnCounter dropDownValue={dropDownValue}/>}
             {value==='Knockdown'&&<Knockdown dropDownValue={dropDownValue}/>}
