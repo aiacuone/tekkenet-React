@@ -1,4 +1,7 @@
-export const moveList=[
+export const akuma=
+  {
+    name:'akuma',
+    moveList:[
     {
       "Command": "in rage 1, 1, b or f+3, 2",
       "Hit level": "m(Throw)",
@@ -949,4 +952,6 @@ export const moveList=[
       "Counter hit frame": "KND",
       "Notes": ""
     }
-   ]
+  ]    
+}
+   

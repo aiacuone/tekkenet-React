@@ -1,4 +1,6 @@
-export let moveList=[
+export let armorKing={
+  name:'armorKing',
+  moveList:[
     {
       "Command": "In rage b+3+4",
       "Hit level": "m (throw)",
@@ -1239,4 +1241,4 @@ export let moveList=[
       "Counter hit frame": "+7g~+17g",
       "Notes": ""
     }
-   ]
+   ]}

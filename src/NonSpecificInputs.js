@@ -17,8 +17,8 @@ import Tripple from './nonSpecificInputs/Tripple'
 
 
 export default function Table({value,dropDownValue}) {
-    
     return (
+        
         <div>
             {<h1>{dropDownValue.toUpperCase()}</h1>}
             {value==='Launchers'&&<Launchers dropDownValue={dropDownValue}/>}

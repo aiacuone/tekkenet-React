@@ -1,4 +1,6 @@
-export let moveList=[
+export let hwoarang={
+  name:'hwoarang',
+  moveList:[
     {
       "Command": "in rage LFS or RFS d+3+4",
       "Hit level": "m",
@@ -1939,4 +1941,4 @@ export let moveList=[
       "Counter hit frame": "",
       "Notes": ""
     }
-   ]
+   ]}

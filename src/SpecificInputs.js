@@ -5,9 +5,6 @@ import StartNFinish from './specificInputs/StartNFinish'
 import SpecificFrame from './specificInputs/SpecificFrame'
 import FrameRange from './specificInputs/FrameRange'
 
-
-
-
 export default function SpecificInput({value,dropDownValue}) {
 
     return (

@@ -1,4 +1,6 @@
-export let moveList=[
+export let masterRaven={
+  name:'masterRaven',
+  todoList:[
     {
       "Command": "in rage d/b+3+4",
       "Hit level": "m (TJ)",
@@ -1719,4 +1721,4 @@ export let moveList=[
       "Counter hit frame": "KND",
       "Notes": "Homing"
     }
-   ]
+   ]}

@@ -17,10 +17,6 @@ export default function ButtonLayer2({buttonLayer1Value,buttonValues,dropDownVal
     return <button value={value} onClick={handleClick}>{value.toUpperCase()}</button>
     })
 
-    // import('./characters/'+dropDownValue.toLowerCase()+'.js').then((character)=>{
-    //     console.log(character.moveList)
-    // })
-
     return (
         <div>
             {buttonLayer2}

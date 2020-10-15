@@ -1,4 +1,6 @@
-export let moveList=[
+export let noctis={
+  name:'noctis',
+  moveList:[
     {
       "Command": "in rage d+1+2",
       "Hit level": "m",
@@ -1049,4 +1051,4 @@ export let moveList=[
       "Counter hit frame": "throw",
       "Notes": ""
     }
-   ]
+   ]}

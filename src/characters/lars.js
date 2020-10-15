@@ -1,4 +1,6 @@
-export let moveList=[
+export let lars={
+  name:'lars',
+  moveList:[
     {
       "Command": "in rage 1+2",
       "Hit level": "m",
@@ -1129,4 +1131,4 @@ export let moveList=[
       "Counter hit frame": "Throw(KND)",
       "Notes": ""
     }
-   ]
+   ]}

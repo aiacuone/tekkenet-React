@@ -1,4 +1,6 @@
-export let moveList=[
+export let feng={
+  name:'feng',
+  moveList:[
     {
       "Command": "in rage d+1+2",
       "Hit level": "m",
@@ -1519,4 +1521,4 @@ export let moveList=[
       "Counter hit frame": "Throw(KND)",
       "Notes": ""
     }
-   ]
+   ]}
