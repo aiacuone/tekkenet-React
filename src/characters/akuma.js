@@ -1,4 +1,4 @@
-export let moveList=[
+export const moveList=[
     {
       "Command": "in rage 1, 1, b or f+3, 2",
       "Hit level": "m(Throw)",

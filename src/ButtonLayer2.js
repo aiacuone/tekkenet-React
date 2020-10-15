@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import NonSpecificInputs from './NonSpecificInputs'
 import SpecificInputs from './SpecificInputs'
-import {moveList as Akuma} from './characters/akuma'
-import {moveList as Alisa} from './characters/alisa'
 
 export default function ButtonLayer2({buttonLayer1Value,buttonValues,dropDownValue}) {
 
