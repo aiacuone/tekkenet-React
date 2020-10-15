@@ -17,7 +17,7 @@ export default function ButtonLayer2({getCharacterMoves,buttonLayer1Value,dropDo
     let buttonLayer2=Object.keys(getCharacterMoves[buttonLayer1Value]).map((value)=>{
         return <button value={value} onClick={handleClick}>{value.toUpperCase()}</button>
     })
-    console.log(characters[dropDownValue].moveList)//moveList
+
 
     // console.log(buttonLayer1Value)
    
@@ -26,10 +26,13 @@ export default function ButtonLayer2({getCharacterMoves,buttonLayer1Value,dropDo
     //  console.log(getCharacterMoves)
     //  console.log(buttonLayer1Value)
     //  console.log(noSpecificButtonValue)
-    // console.log(getCharacterMoves[buttonLayer1Value][noSpecificButtonValue][function])
-    
-    
-    console.log(characters[dropDownValue].moveList)// moveList
+    // console.log(getCharacterMoves[buttonLayer1Value])
+    // console.log(getCharacterMoves[buttonLayer1Value])
+    // console.log(getCharacterMoves[buttonLayer1Value][noSpecificButtonValue])
+ 
+    // const test = getCharacterMoves[buttonLayer1Value][noSpecificButtonValue].infoFunc(moveList, buildTable)
+    // console.log(test)
+    // console.log(characters[dropDownValue].moveList)// moveList
 
     return (
         <div>
@@ -40,7 +43,7 @@ export default function ButtonLayer2({getCharacterMoves,buttonLayer1Value,dropDo
 
 
 
-            {noSpecificButtonValue!==''&&null}
+            {noSpecificButtonValue!==''&&console.log(getCharacterMoves[buttonLayer1Value][noSpecificButtonValue].infoFunc)}
             {specificButtonValue!==''&&<SpecificInputs value={specificButtonValue} dropDownValue={dropDownValue}/>}
         </div>
     )
