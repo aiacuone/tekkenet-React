@@ -5,8 +5,7 @@ import characters from './characters'
 export default function CharacterDropdown() {
 
     let characterOptions = Object.keys(characters).map((character)=>{
-    return <option value={character}>{character.toUpperCase()}</option>
-    
+        return <option value={character}>{character.toUpperCase()}</option>
     })
 
     let [dropDownValue, setDropDownValue] = useState('')    
