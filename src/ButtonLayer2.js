@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect,useRef} from 'react'
 import SpecificInputs from './SpecificInputs'
 import characters from './characters'
 import getCharacterMoves from './getCharacterMoves'
@@ -38,35 +38,35 @@ export default function ButtonLayer2({buttonLayer1Value,dropDownValue}) {
 
 
 
-    // const isInitialMount = useRef(true);
-
-    // useEffect(() => {
-    //   if (isInitialMount.current) {
-    //      isInitialMount.current = false;
-    //   } else {
-
-    //     setSpecificButtonValue('')
-    //     setNoSpecificButtonValue('')
-    //     console.log('useEffect works')
-    //     console.log(noSpecificButtonValue,'noSpecificButtonValue')
-    //     console.log(specificButtonValue,'specificButtonValue')
-
-    //   }
-    // },[buttonLayer1Value]);
-
-     
-
+    const isInitialMount = useRef(true);
 
     useEffect(() => {
-
+      if (isInitialMount.current) {
+         isInitialMount.current = false;
+      } else {
 
         setSpecificButtonValue('')
         setNoSpecificButtonValue('')
         console.log('useEffect works')
+        console.log(noSpecificButtonValue,'noSpecificButtonValue')
+        console.log(specificButtonValue,'specificButtonValue')
+
+      }
+    },[buttonLayer1Value]);
+
+     
+
+
+    // useEffect(() => {
+
+
+    //     setSpecificButtonValue('')
+    //     setNoSpecificButtonValue('')
+    //     console.log('useEffect works')
    
 
       
-    },[buttonLayer1Value]);
+    // },[buttonLayer1Value]);
     
     console.log(noSpecificButtonValue,'noSpecificButtonValue')
     console.log(specificButtonValue,'specificButtonValue')
@@ -99,7 +99,7 @@ export default function ButtonLayer2({buttonLayer1Value,dropDownValue}) {
 
 
             {/* //THIS SHOULD BE END RESULT */}
-            {/* {noSpecificButtonValue!==''&&<Table filteredMoves={getCharacterMoves[buttonLayer1Value][noSpecificButtonValue].infoFunc(characterMoveList)}/>}  */}
+            {noSpecificButtonValue!==''&&<Table filteredMoves={getCharacterMoves[buttonLayer1Value][noSpecificButtonValue].infoFunc(characterMoveList)}/>} 
 
 
 
