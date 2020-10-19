@@ -18,7 +18,7 @@ return <button onClick={handleClick}value={value}>{value.toUpperCase()}</button>
     return (
         <div>
             {buttons}
-            {buttonLayer1Value!==''&&<ButtonLayer2  getCharacterMoves={getCharacterMoves} buttonLayer1Value={buttonLayer1Value}dropDownValue={dropDownValue}/>}
+            {buttonLayer1Value!==''&&<ButtonLayer2 buttonLayer1Value={buttonLayer1Value}dropDownValue={dropDownValue}/>}
         </div>
     )
 }
