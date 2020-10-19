@@ -1,9 +1,11 @@
 import React from 'react'
+import getCharacterMoves from '../getCharacterMoves'
 
 export default function RageDrive() {
     return (
         <div>
-            RageDrive
+            <h2>RAGE DRIVE</h2>
+            {getCharacterMoves.rage.rageDrive.infoFunc()}
         </div>
     )
 }

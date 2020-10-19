@@ -1,9 +1,11 @@
 import React from 'react'
+import getCharacterMoves from '../getCharacterMoves'
 
 export default function PowerCrush() {
     return (
         <div>
-            PowerCrush
+            <h2>POWER CRUSH</h2>
+            {getCharacterMoves.situational.powerCrush.infoFunc()}
         </div>
     )
 }
