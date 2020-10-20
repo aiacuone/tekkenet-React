@@ -8,11 +8,10 @@ import React from 'react'
 export default function FramesRangeTable(props) {
 
     let filteredMoveList=props.filteredMoveList
-
-    console.log(filteredMoveList,'<===FramesRange FilteredList')
     
     return (
         <div>
+            {filteredMoveList.length!==0&&console.log(filteredMoveList,'<===FramesRangeTable FilteredList')}
             FRAMES RANGE TABLE
         </div>
     )
