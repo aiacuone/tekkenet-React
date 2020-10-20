@@ -1,6 +1,6 @@
 export let asuka={
   name:'asuka',
-  movelist:[
+  moveList:[
     {
       "Command": "in rage d/f+1+2",
       "Hit level": "m",

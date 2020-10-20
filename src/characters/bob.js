@@ -1,6 +1,6 @@
 export let bob={
   name:'bob',
-  movelist:[
+  moveList:[
     {
       "Command": "in rage d/f+1+2",
       "Hit level": "m",
