@@ -8,6 +8,7 @@ import Safety from './components/Safety'
 import Situational from './components/Situational'
 import Strings from './components/Strings'
 
+
 export default function ButtonLayer1(props) {
 
 let [frames,        setFrames]      =useState('')
@@ -21,6 +22,7 @@ let [strings,       setStrings]     =useState('')
 
 
 function newState(e){
+
     setFrames       (false)
     setHeight       (false)
     setKnockdown    (false)
@@ -29,7 +31,9 @@ function newState(e){
     setSafety       (false)
     setSituational  (false)
     setStrings      (false)
+
     let setState=''
+
 e.target.value==='frames'       &&setFrames     (true)
 e.target.value==='height'       &&setHeight     (true)
 e.target.value==='knockdown'    &&setKnockdown  (true)
@@ -38,8 +42,11 @@ e.target.value==='rage'         &&setRage       (true)
 e.target.value==='safety'       &&setSafety     (true)
 e.target.value==='situational'  &&setSituational(true)
 e.target.value==='strings'      &&setStrings    (true)
+
 return setState
+
 }
+
 
     let buttons=[
         <button onClick={newState} value='frames'>      FRAMES      </button>,
@@ -51,7 +58,9 @@ return setState
         <button onClick={newState} value='situational'> SITUATIONAL </button>,
         <button onClick={newState} value='strings'>     STRINGS     </button>]
 
+
     return (
+        
         <div>
             
             {buttons}

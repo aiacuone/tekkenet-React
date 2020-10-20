@@ -6,18 +6,20 @@ import StartNFinishTable from './StartNFinishTable'
 
 
 export default function StartNFinish(props) {// eslint-disable-next-line
-    
+
     let [value1,setValue1]=useState(false)// eslint-disable-next-line
     let [value2,setValue2]=useState(false)
 
-    let moveList=characters[props.dropDownValue].moveList
-    let filteredMoveList=getCharacterMoves.height.startNFinish.infoFunc(value1,value2,moveList)
+    let moveList=           characters[props.dropDownValue].moveList
+    let filteredMoveList=   getCharacterMoves.height.startNFinish.infoFunc(value1,value2,moveList)
 
     function handleChange(e){
         e.target.name==='StartNFinish1'?setValue1(e.target.value):setValue2(e.target.value)
     }
     
+
     return (
+
         <div>
 
             <h2>START AND FINISH</h2>
@@ -35,5 +37,6 @@ export default function StartNFinish(props) {// eslint-disable-next-line
             {value1&&value2&&<StartNFinishTable filteredMoveList={filteredMoveList}/>}
      
         </div>
+        
     )
 }

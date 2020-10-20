@@ -10,10 +10,15 @@ export default function NormalKnockdown(props) {
     let moveList=       characters[props.dropDownValue].moveList
     let filteredList=   getCharacterMoves.knockdown.knockdown.infoFunc(moveList)
 
+
     return (
+
         <div>
+
             <h2>NORMAL KNOCKDOWN</h2>
             <Table filteredList={filteredList} />
+
         </div>
+        
     )
 }

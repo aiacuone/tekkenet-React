@@ -5,7 +5,7 @@ export default function Table(props) {
     return (
         <div>
             <h2>TABLE</h2>
-            {filteredList&&console.log(props.filteredList)}
+            {filteredList.length>0&&console.log(props.filteredList)}
         </div>
     )
 }

@@ -22,13 +22,17 @@ export default function Rage(props) {
         <button onClick={handleClick} value='rageDrive'> RAGE DRIVE  </button>
     ]
 
+
     return (
+
         <div>
+
             {buttons}
  
            {rageArt    &&<RageArt   dropDownValue={props.dropDownValue}/>}
            {rageDrive  &&<RageDrive dropDownValue={props.dropDownValue}/>}
 
         </div>
+        
     )
 }

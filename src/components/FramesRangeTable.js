@@ -10,10 +10,14 @@ export default function FramesRangeTable(props) {
     let filteredMoveList=props.filteredMoveList
     
     return (
+
         <div>
+
             {filteredMoveList.length!==0&&console.log(filteredMoveList,'<===FramesRangeTable FilteredList')}
             FRAMES RANGE TABLE
+
         </div>
+        
     )
 }
 

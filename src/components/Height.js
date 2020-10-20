@@ -22,13 +22,17 @@ export default function Height(props) {
         <button onClick={handleClick} value='startNFinish'>     START AND FINISH </button>
     ]
     
+
     return (
+
         <div>
+
             {buttons}
 
             {specificHeight &&<SpecificHeight   dropDownValue={props.dropDownValue}/>}
             {startNFinish   &&<StartNFinish     dropDownValue={props.dropDownValue}/>}
 
         </div>
+        
     )
 }

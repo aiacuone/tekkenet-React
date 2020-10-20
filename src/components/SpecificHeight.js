@@ -7,11 +7,13 @@ import SpecificHeightTable from './SpecificHeightTable'
 
 export default function SpecificHeight(props) {
     
-    let [low,setLow]=useState(false)
-    let [med,setMed]=useState(false) 
-    let [high,setHigh]=useState(false)  
+    let [low,setLow]=   useState(false)
+    let [med,setMed]=   useState(false) 
+    let [high,setHigh]= useState(false)  
     
+
     function handleChange(e){
+
         setLow(false)
         setMed(false)
         setHigh(false)
@@ -19,9 +21,12 @@ export default function SpecificHeight(props) {
         e.target.value==='low'&&setLow(true)
         e.target.value==='med'&&setMed(true)
         e.target.value==='high'&&setHigh(true)
+
     }
     
+
     return (
+
         <div>
             
             <h3>SPECIFIC HEIGHT</h3>
@@ -34,5 +39,6 @@ export default function SpecificHeight(props) {
             {high   &&<SpecificHeightTable height='h' dropDownValue={props.dropDownValue} />}
 
         </div>
+        
     )
 }

@@ -10,10 +10,15 @@ export default function CounterLaunch(props) {
     let moveList=       characters[props.dropDownValue].moveList
     let filteredList=   getCharacterMoves.launch.counterLaunch.infoFunc(moveList)
     
+
     return (
+
         <div>
+
             <h2>COUNTER LAUNCH</h2>
             <Table filteredList={filteredList} />
+
         </div>
+        
     )
 }

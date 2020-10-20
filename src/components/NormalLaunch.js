@@ -10,10 +10,15 @@ export default function NormalLaunch(props) {
     let moveList=       characters[props.dropDownValue].moveList
     let filteredList=   getCharacterMoves.launch.launch.infoFunc(moveList)
 
+    
     return (
+
         <div>
+
             <h2>NORMAL LAUNCH</h2>
             <Table filteredList={filteredList} />
+
         </div>
+
     )
 }

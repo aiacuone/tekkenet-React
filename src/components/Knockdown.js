@@ -21,13 +21,18 @@ export default function Knockdown(props) {
         <button value='knockdown'           onClick={handleClick}>KNOCKDOWN         </button>,
         <button value='counterKnockdown'    onClick={handleClick}>COUNTER KNOCKDOWN </button>
     ]
+
+
     return (
+
         <div>
+
             {buttons}
 
             {normalKnockdown&&  <NormalKnockdown    dropDownValue={props.dropDownValue}/>}
             {counterKnockdown&& <CounterKnockdown   dropDownValue={props.dropDownValue}/>}
 
         </div>
+        
     )
 }

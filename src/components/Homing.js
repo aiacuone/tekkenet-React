@@ -10,10 +10,15 @@ export default function Homing(props) {
     let moveList=       characters[props.dropDownValue].moveList
     let filteredList=   getCharacterMoves.situational.homing.infoFunc(moveList)
 
+    
     return (
+
         <div>
+
             <h2>HOMING</h2>
             <Table filteredList={filteredList} />
+
         </div>
+
     )
 }

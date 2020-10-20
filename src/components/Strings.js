@@ -6,6 +6,7 @@ import TrippleString from './TrippleString'
 
 
 export default function Strings(props) {
+
     let [single,setSingle]      =useState(false)
     let [dual,setDual]          =useState(false)
     let [tripple,setTripple]    =useState(false)
@@ -24,13 +25,19 @@ export default function Strings(props) {
         <button onClick={handleClick} value='dual'>      DUAL            </button>,
         <button onClick={handleClick} value='tripple'>   TRIPPLE         </button>
     ]
+
+
     return (
+
         <div>
+
             {buttons}
  
            {single  &&<SingleString     dropDownValue={props.dropDownValue}/>}
            {dual    &&<DualString       dropDownValue={props.dropDownValue}/>}
            {tripple &&<TrippleString    dropDownValue={props.dropDownValue}/>}
+
         </div>
+        
     )
 }

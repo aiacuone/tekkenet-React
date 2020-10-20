@@ -7,13 +7,18 @@ import Table from '../Table'
 
 export default function Safe(props) {
 
-    let moveList=characters[props.dropDownValue].moveList
-    let filteredList= getCharacterMoves.safety.safe.infoFunc(moveList)
+    let moveList=       characters[props.dropDownValue].moveList
+    let filteredList=   getCharacterMoves.safety.safe.infoFunc(moveList)
+
 
     return (
+
         <div>
+
             <h2>SAFE</h2>
             <Table filteredList={filteredList} />
+
         </div>
+        
     )
 }

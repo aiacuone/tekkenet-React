@@ -7,7 +7,6 @@ export let getCharacterMoves={
             name:   'Specific Height',
             button: 'Specific Height',
             infoFunc:function(height,moveList){
-              // console.log(height,moveList)
                 let arr = []
                 for(let i=0; i<moveList.length; i++){
                 let filteredMove = moveList[i]["Hit level"].replace(" ","")

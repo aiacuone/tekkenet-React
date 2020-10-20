@@ -18,13 +18,15 @@ export default function SpecificFrames(props) {
    
 
     return (
+
         <div>
-            
+
             <h3>SPECIFIC FRAME</h3>
             <input type='number' onChange={handleChange} value={frames}></input>
 
             {frames&&<SpecificFramesTable filteredMoveList={filteredMoveList}/>}
 
         </div>
+        
     )
 }

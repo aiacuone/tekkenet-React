@@ -19,6 +19,7 @@ export default function FramesRange(props) {
 
     
     return (
+
         <div>
 
             <h3>FRAME RANGE</h3>
@@ -29,6 +30,7 @@ export default function FramesRange(props) {
             {lowValue&&highValue&&<FramesRangeTable filteredMoveList={filteredMoveList}/>}
 
         </div>
+        
     )
 }
 

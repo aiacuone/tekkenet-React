@@ -10,10 +10,15 @@ export default function SingleString(props) {
     let moveList=       characters[props.dropDownValue].moveList
     let filteredList=   getCharacterMoves.strings.single.infoFunc(moveList)
 
+
     return (
+
         <div>
+
             <h2>SINGLE STRING</h2>
             <Table filteredList={filteredList} />
+            
         </div>
+
     )
 }

@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import FramesRange from './FramesRange'
-import SpecificFrames from './SpecificFrames'
+import React, {useState}    from 'react'
+import FramesRange          from './FramesRange'
+import SpecificFrames       from './SpecificFrames'
 
 
 
@@ -23,12 +23,16 @@ export default function Frames(props) {
     ]
 
     return (
+
         <div>
+
             {buttons}
 
             {framesRange    &&<FramesRange      dropDownValue={props.dropDownValue}/>}
             {specificFrames &&<SpecificFrames   dropDownValue={props.dropDownValue}/>}
+
         </div>
+        
     )
 }
 

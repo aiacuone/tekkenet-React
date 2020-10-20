@@ -10,10 +10,15 @@ export default function CounterKnockdown(props) {
     let moveList=       characters[props.dropDownValue].moveList
     let filteredList=   getCharacterMoves.knockdown.counterKnockdown.infoFunc(moveList)
     
+    
     return (
+
         <div>
+
             <h2>COUNTER KNOCKDOWN</h2>
             <Table filteredList={filteredList} />
+
         </div>
+
     )
 }

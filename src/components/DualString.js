@@ -10,10 +10,15 @@ export default function DualString(props) {
     let moveList=       characters[props.dropDownValue].moveList
     let filteredList=   getCharacterMoves.strings.dual.infoFunc(moveList)
     
+
     return (
+
         <div>
+
            <h2>DUAL STRING</h2>
            <Table filteredList={filteredList} />
+
         </div>
+        
     )
 }

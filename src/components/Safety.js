@@ -22,7 +22,9 @@ export default function Safety(props) {
         <button onClick={handleClick} value='unsafe'> UNSAFE  </button>
     ]
 
+
     return (
+
         <div>
 
            {buttons}
@@ -31,5 +33,6 @@ export default function Safety(props) {
            {unsafe  &&<Unsafe   dropDownValue={props.dropDownValue}/>}
 
         </div>
+        
     )
 }
