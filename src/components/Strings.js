@@ -3,7 +3,9 @@ import SingleString from './SingleString'
 import DualString from './DualString'
 import TrippleString from './TrippleString'
 
-export default function Strings() {
+
+
+export default function Strings(props) {
     let [single,setSingle]      =useState(false)
     let [dual,setDual]          =useState(false)
     let [tripple,setTripple]    =useState(false)
@@ -26,9 +28,9 @@ export default function Strings() {
         <div>
             {buttons}
  
-           {single  &&<SingleString />}
-           {dual    &&<DualString />}
-           {tripple &&<TrippleString />}
+           {single  &&<SingleString     dropDownValue={props.dropDownValue}/>}
+           {dual    &&<DualString       dropDownValue={props.dropDownValue}/>}
+           {tripple &&<TrippleString    dropDownValue={props.dropDownValue}/>}
         </div>
     )
 }

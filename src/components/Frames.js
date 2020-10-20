@@ -3,7 +3,10 @@ import FramesRange from './FramesRange'
 import SpecificFrames from './SpecificFrames'
 
 
-export default function Frames() {
+
+
+export default function Frames(props) {
+
     let [framesRange,setFramesRange]        =useState(false)
     let [specificFrames,setSpecificFrames]  =useState(false)
     
@@ -23,8 +26,8 @@ export default function Frames() {
         <div>
             {buttons}
 
-            {framesRange    &&<FramesRange />}
-            {specificFrames &&<SpecificFrames />}
+            {framesRange    &&<FramesRange      dropDownValue={props.dropDownValue}/>}
+            {specificFrames &&<SpecificFrames   dropDownValue={props.dropDownValue}/>}
         </div>
     )
 }

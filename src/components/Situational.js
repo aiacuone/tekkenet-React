@@ -4,13 +4,16 @@ import PowerCrush from './PowerCrush'
 import WallBounce from './WallBounce'
 import Homing from './Homing'
 
-export default function Situational() {
+
+export default function Situational(props) {
+
     let [plusOnBlock,setPlusOnBlock]    =useState(false)
     let [powerCrush,setPowerCrush]      =useState(false)
     let [wallBounce,setWallBounce]      =useState(false)
     let [homing,setHoming]              =useState(false)
 
     function handleClick(e){
+    
         setPlusOnBlock  (false)
         setPowerCrush   (false)
         setWallBounce   (false)
@@ -22,6 +25,7 @@ export default function Situational() {
     }
 
     let buttons=[
+
         <button onClick={handleClick} value='plusOnBlock'>   PLUS ON BLOCK   </button>,
         <button onClick={handleClick} value='powerCrush'>    POWERCRUSH      </button>,
         <button onClick={handleClick} value='wallBounce'>    WALLBOUNCE      </button>,
@@ -29,12 +33,14 @@ export default function Situational() {
     ]
     return (
         <div>
+            
             {buttons}
  
-           {plusOnBlock  &&<PlusOnBlock />}
-           {powerCrush   &&<PowerCrush />}
-           {wallBounce   &&<WallBounce />}
-           {homing       &&<Homing />}
+           {plusOnBlock  &&<PlusOnBlock dropDownValue={props.dropDownValue}/>}
+           {powerCrush   &&<PowerCrush  dropDownValue={props.dropDownValue}/>}
+           {wallBounce   &&<WallBounce  dropDownValue={props.dropDownValue}/>}
+           {homing       &&<Homing      dropDownValue={props.dropDownValue}/>}
+
         </div>
     )
 }

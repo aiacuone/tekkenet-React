@@ -2,7 +2,10 @@ import React, {useState}    from 'react'
 import CounterLaunch        from './CounterLaunch'
 import NormalLaunch         from './NormalLaunch'
 
-export default function Launch() {
+
+
+
+export default function Launch(props) {
 
     let [normalLaunch,setNormalLaunch]  =useState(false)
     let [counterLaunch,setCounterLaunch]=useState(false)
@@ -18,12 +21,15 @@ export default function Launch() {
         <button onClick={handleClick} value='launch'>        LAUNCH          </button>,
         <button onClick={handleClick} value='counterLaunch'> COUNTER LAUNCH  </button>
     ]
+
     return (
         <div>
+
             {buttons}
  
-           {normalLaunch    &&<NormalLaunch />}
-           {counterLaunch   &&<CounterLaunch />}
+           {normalLaunch    &&<NormalLaunch     dropDownValue={props.dropDownValue}/>}
+           {counterLaunch   &&<CounterLaunch    dropDownValue={props.dropDownValue}/>}
+
         </div>
     )
 }

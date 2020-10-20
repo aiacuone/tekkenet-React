@@ -8,7 +8,7 @@ import Safety from './components/Safety'
 import Situational from './components/Situational'
 import Strings from './components/Strings'
 
-export default function ButtonLayer1({dropDownValue}) {
+export default function ButtonLayer1(props) {
 
 let [frames,        setFrames]      =useState('')
 let [height,        setHeight]      =useState('') 
@@ -56,14 +56,14 @@ return setState
             
             {buttons}
 
-            {frames     &&<Frames />}
-            {height     &&<Height />}
-            {knockdown  &&<Knockdown />}
-            {launch     &&<Launch />}
-            {rage       &&<Rage />}
-            {safety     &&<Safety />}
-            {situational&&<Situational />}
-            {strings    &&<Strings />}
+            {frames     &&<Frames       dropDownValue={props.dropDownValue}/>}
+            {height     &&<Height       dropDownValue={props.dropDownValue}/>}
+            {knockdown  &&<Knockdown    dropDownValue={props.dropDownValue}/>}
+            {launch     &&<Launch       dropDownValue={props.dropDownValue}/>}
+            {rage       &&<Rage         dropDownValue={props.dropDownValue}/>}
+            {safety     &&<Safety       dropDownValue={props.dropDownValue}/>}
+            {situational&&<Situational  dropDownValue={props.dropDownValue}/>}
+            {strings    &&<Strings      dropDownValue={props.dropDownValue}/>}
 
         </div>
     )

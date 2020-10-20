@@ -2,14 +2,13 @@ import React, {useState}    from 'react'
 import NormalKnockdown      from './NormalKnockdown'
 import CounterKnockdown     from './CounterKnockdown'
 
-export default function Knockdown() {
+
+
+
+export default function Knockdown(props) {
+
     let [normalKnockdown,setNormalKnockdown]    =useState(false)
     let [counterKnockdown,setCounterKnockdown]  =useState(false)
-    
-    // function resetButtons(){
-    //     setNormalKnockdown  (false)
-    //     setCounterKnockdown (false)
-    // }
     
     function handleClick(e){
         setNormalKnockdown  (false)
@@ -26,8 +25,9 @@ export default function Knockdown() {
         <div>
             {buttons}
 
-            {normalKnockdown&&  <NormalKnockdown />}
-            {counterKnockdown&& <CounterKnockdown />}
+            {normalKnockdown&&  <NormalKnockdown    dropDownValue={props.dropDownValue}/>}
+            {counterKnockdown&& <CounterKnockdown   dropDownValue={props.dropDownValue}/>}
+
         </div>
     )
 }

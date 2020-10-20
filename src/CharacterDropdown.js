@@ -12,6 +12,7 @@ export default function CharacterDropdown() {
     function handleChange(e){
         setDropDownValue(e.target.value)
     }
+
     return (
         <div>
             <label>CHOOSE YOUR CHARACTER
@@ -19,6 +20,7 @@ export default function CharacterDropdown() {
                     {characterOptions}
                 </select>
             </label>
+
             {dropDownValue!==''&&<ButtonLayer1 dropDownValue={dropDownValue}/>}
         </div>
     )

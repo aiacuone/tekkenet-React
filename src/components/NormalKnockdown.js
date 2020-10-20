@@ -1,11 +1,19 @@
-import React from 'react'
-import getCharacterMoves from '../getCharacterMoves'
+import React                from 'react'
+import getCharacterMoves    from '../getCharacterMoves'
+import characters           from '../characters'
+import Table                from '../Table'
 
-export default function NormalKnockdown() {
+
+
+export default function NormalKnockdown(props) {
+
+    let moveList=       characters[props.dropDownValue].moveList
+    let filteredList=   getCharacterMoves.knockdown.knockdown.infoFunc(moveList)
+
     return (
         <div>
             <h2>NORMAL KNOCKDOWN</h2>
-            {getCharacterMoves.knockdown.knockdown.infoFunc()}
+            <Table filteredList={filteredList} />
         </div>
     )
 }

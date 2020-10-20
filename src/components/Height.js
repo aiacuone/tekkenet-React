@@ -2,7 +2,11 @@ import React, {useState}    from 'react'
 import SpecificHeight       from './SpecificHeight'
 import StartNFinish         from './StartNFinish'
 
-export default function Height() {
+
+
+
+export default function Height(props) {
+
     let [specificHeight,setSpecificHeight]  =useState(false)
     let [startNFinish,setStartNFinish]      =useState(false)
 
@@ -15,14 +19,16 @@ export default function Height() {
 
     let buttons=[
         <button onClick={handleClick} value='specificHeight'>   SPECIFIC HEIGHT  </button>,
-        <button onClick={handleClick} value='startNFinish'>     START AND FINISH </button>]
+        <button onClick={handleClick} value='startNFinish'>     START AND FINISH </button>
+    ]
     
     return (
         <div>
             {buttons}
 
-            {specificHeight &&<SpecificHeight />}
-            {startNFinish   &&<StartNFinish />}
+            {specificHeight &&<SpecificHeight   dropDownValue={props.dropDownValue}/>}
+            {startNFinish   &&<StartNFinish     dropDownValue={props.dropDownValue}/>}
+
         </div>
     )
 }

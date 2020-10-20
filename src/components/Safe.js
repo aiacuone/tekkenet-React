@@ -1,11 +1,19 @@
 import React from 'react'
 import getCharacterMoves from '../getCharacterMoves'
+import characters from '../characters'
+import Table from '../Table'
 
-export default function Safe() {
+
+
+export default function Safe(props) {
+
+    let moveList=characters[props.dropDownValue].moveList
+    let filteredList= getCharacterMoves.safety.safe.infoFunc(moveList)
+
     return (
         <div>
             <h2>SAFE</h2>
-            {getCharacterMoves.safety.safe.infoFunc()}
+            <Table filteredList={filteredList} />
         </div>
     )
 }

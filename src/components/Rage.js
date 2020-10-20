@@ -1,8 +1,12 @@
-import React, {useState} from 'react'
-import RageArt from './RageArt'
-import RageDrive from './RageDrive'
+import React, {useState}    from 'react'
+import RageArt              from './RageArt'
+import RageDrive            from './RageDrive'
 
-export default function Rage() {
+
+
+
+export default function Rage(props) {
+
     let [rageArt,setRageArt]    =useState(false)
     let [rageDrive,setRageDrive]=useState(false)
 
@@ -17,12 +21,14 @@ export default function Rage() {
         <button onClick={handleClick} value='rageArt'>   RAGE ART    </button>,
         <button onClick={handleClick} value='rageDrive'> RAGE DRIVE  </button>
     ]
+
     return (
         <div>
             {buttons}
  
-           {rageArt    &&<RageArt />}
-           {rageDrive  &&<RageDrive />}
+           {rageArt    &&<RageArt   dropDownValue={props.dropDownValue}/>}
+           {rageDrive  &&<RageDrive dropDownValue={props.dropDownValue}/>}
+
         </div>
     )
 }
