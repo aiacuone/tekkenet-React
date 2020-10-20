@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import SpecificHeightTable from './SpecificHeightTable'
+import characters from '../characters'
+import getCharacterMoves from '../getCharacterMoves'
 
 
 
@@ -7,36 +9,28 @@ import SpecificHeightTable from './SpecificHeightTable'
 
 export default function SpecificHeight(props) {
     
-    let [low,setLow]=   useState(false)
-    let [med,setMed]=   useState(false) 
-    let [high,setHigh]= useState(false)  
+    let [height,setHeight]=   useState('') 
     
 
     function handleChange(e){
 
-        setLow(false)
-        setMed(false)
-        setHigh(false)
-
-        e.target.value==='low'&&setLow(true)
-        e.target.value==='med'&&setMed(true)
-        e.target.value==='high'&&setHigh(true)
+        setHeight(e.target.value)
 
     }
     
+    let moveList=           characters[props.dropDownValue].moveList
+    let filteredMoveList=   getCharacterMoves.height.specificHeight.infoFunc(height,moveList)
 
     return (
 
         <div>
             
             <h3>SPECIFIC HEIGHT</h3>
-            <label>LOW<input    type='radio' value='low'    name='height' onChange={handleChange}></input></label>
-            <label>MED<input    type='radio' value='med'    name='height' onChange={handleChange}></input></label>
-            <label>HIGH<input   type='radio' value='high'   name='height' onChange={handleChange}></input><br/></label>
+            <label>LOW<input    type='radio' value='l'  name='height' onChange={handleChange}></input></label>
+            <label>MED<input    type='radio' value='m'  name='height' onChange={handleChange}></input></label>
+            <label>HIGH<input   type='radio' value='h'  name='height' onChange={handleChange}></input><br/></label>
 
-            {low    &&<SpecificHeightTable height='l' dropDownValue={props.dropDownValue} />}
-            {med    &&<SpecificHeightTable height='m' dropDownValue={props.dropDownValue} />}
-            {high   &&<SpecificHeightTable height='h' dropDownValue={props.dropDownValue} />}
+            {height&&<SpecificHeightTable  filteredMoveList={filteredMoveList} dropDownValue={props.dropDownValue} />}
 
         </div>
         

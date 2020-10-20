@@ -15,7 +15,6 @@ export let getCharacterMoves={
                 }
                 }
                 return arr
-                // console.log(arr)
             }
         },
 
@@ -30,8 +29,6 @@ export let getCharacterMoves={
                     if(moveList[i]["Hit level"].length <= 8){arr.push(moveList[i])}
                     }
                 }
-
-                // console.log(arr.length)
                 return arr
             }
         }
@@ -51,8 +48,6 @@ export let getCharacterMoves={
                       arr.push(moveList[i])       
                   }   
               }
-              // console.log(arr)
-              
               return arr
             }
         },
@@ -69,7 +64,6 @@ export let getCharacterMoves={
                 }   
             }
             return arr
-            // console.log(arr)
             }
         }
     },
@@ -90,7 +84,6 @@ export let getCharacterMoves={
               }
              
               return arr
-              // console.log(arr)
             }
           },
 
@@ -106,7 +99,6 @@ export let getCharacterMoves={
                 }
                 }
                 return arr
-                // console.log(arr)
             }
         }
     },
@@ -126,7 +118,6 @@ export let getCharacterMoves={
                   }   
               }
               return arr
-              // console.log(arr)
             }
           },
 
@@ -142,7 +133,6 @@ export let getCharacterMoves={
                 }   
               }
               return arr
-              // console.log(arr)
             }
         }
     },
@@ -159,7 +149,6 @@ export let getCharacterMoves={
                 if(moveList[i]["Notes"] === "Rage art"){arr.push(moveList[i])}
               }
               return arr
-              // console.log(arr)
             }
           },
         
@@ -174,7 +163,6 @@ export let getCharacterMoves={
                 }
               }
               return arr
-              // console.log(arr)
             }
           }
     },
@@ -196,7 +184,6 @@ export let getCharacterMoves={
                   }           
               }
               return arr
-              // console.log(arr)
             }
           },
 
@@ -212,7 +199,6 @@ export let getCharacterMoves={
                 }
                 }
                 return arr
-                // console.log(arr)
             }
         }
     },
@@ -232,7 +218,6 @@ export let getCharacterMoves={
                 }       
               }
               return arr
-              // console.log(arr)
             }
         },
 
@@ -248,7 +233,6 @@ export let getCharacterMoves={
                     }   
                 }
                 return arr
-                // console.log(arr)
             }
         },
 
@@ -264,7 +248,6 @@ export let getCharacterMoves={
                 }   
               }
               return arr
-              // console.log(arr)
             }
         },
 
@@ -280,7 +263,6 @@ export let getCharacterMoves={
                 }   
               }
               return arr
-              // console.log(arr)
             }
         }
     },
@@ -302,7 +284,6 @@ export let getCharacterMoves={
                 }   
               }
               return arr
-              // console.log(arr)
             }
         },
 
@@ -320,7 +301,6 @@ export let getCharacterMoves={
                 }   
               }
               return arr
-              // console.log(arr)
             }
         },
         
@@ -338,7 +318,6 @@ export let getCharacterMoves={
                 }   
               }
               return arr
-              // console.log(arr)
             }
         }
     }       

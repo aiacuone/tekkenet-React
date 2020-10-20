@@ -1,27 +1,40 @@
 import React                from 'react'
-import getCharacterMoves    from '../getCharacterMoves'
-import characters           from '../characters'
+
+
 
 
 
 
 export default function SpecificHeightTable(props) {
 
-let height=             props.height
-let moveList=           characters[props.dropDownValue].moveList
-let filteredMoveList=   getCharacterMoves.height.specificHeight.infoFunc(height,moveList)
+    let filteredMoveList=props.filteredMoveList
+    
+    function buildTable(){
 
+        let headers= Object.keys(filteredMoveList[0]).map((header)=>{
+            return <th>{header}</th>
+        })
+        let tableHeaders=<tr>{headers}</tr>
+
+        let moves=filteredMoveList.map((move)=>{
+            let newMove=Object.values(move).map((value)=>{
+            return <td>{value}</td>
+            })
+        return <tr>{newMove}</tr>
+        })
+        
+        return [tableHeaders,moves]
+
+    }
 
     return (
 
         <div>
-
-            SpecificHeightTable
-            {filteredMoveList.length>0&&console.log(filteredMoveList)}
-            <h3>{props.height}</h3>
-            <h3>{props.dropDownValue}</h3>
-
+            
+            {filteredMoveList.length>0?buildTable():<h1>NO MOVES</h1>}
+            
         </div>
-        
+
     )
 }
+

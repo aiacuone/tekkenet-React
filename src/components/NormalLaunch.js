@@ -9,7 +9,6 @@ export default function NormalLaunch(props) {
 
     let moveList=       characters[props.dropDownValue].moveList
     let filteredList=   getCharacterMoves.launch.launch.infoFunc(moveList)
-
     
     return (
 
