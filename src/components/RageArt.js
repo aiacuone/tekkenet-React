@@ -1,7 +1,7 @@
 import React from 'react'
 import getCharacterMoves from '../getCharacterMoves'
 import characters from '../characters'
-import Table from '../Table'
+import Table from './Table'
 
 
 

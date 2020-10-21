@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
-import SpecificHeightTable from './SpecificHeightTable'
 import characters from '../characters'
 import getCharacterMoves from '../getCharacterMoves'
-import Table from '../Table'
+import Table from './Table'
 
 
 

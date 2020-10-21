@@ -47,16 +47,20 @@ return setState
 
 }
 
-
+    let buttonStyle={
+        fontFamily:'Segoe UI',
+        borderRadius:'5px',
+        boxShadow:0
+    }
     let buttons=[
-        <button onClick={newState} value='frames'>      FRAMES      </button>,
-        <button onClick={newState} value='height'>      HEIGHT      </button>,
-        <button onClick={newState} value='knockdown'>   KNOCKDOWN   </button>,
-        <button onClick={newState} value='launch'>      LAUNCH      </button>,
-        <button onClick={newState} value='rage'>        RAGE        </button>,
-        <button onClick={newState} value='safety'>      SAFETY      </button>,
-        <button onClick={newState} value='situational'> SITUATIONAL </button>,
-        <button onClick={newState} value='strings'>     STRINGS     </button>]
+        <button style={buttonStyle} onClick={newState} value='frames'>      FRAMES      </button>,
+        <button style={buttonStyle} onClick={newState} value='height'>      HEIGHT      </button>,
+        <button style={buttonStyle} onClick={newState} value='knockdown'>   KNOCKDOWN   </button>,
+        <button style={buttonStyle} onClick={newState} value='launch'>      LAUNCH      </button>,
+        <button style={buttonStyle} onClick={newState} value='rage'>        RAGE        </button>,
+        <button style={buttonStyle} onClick={newState} value='safety'>      SAFETY      </button>,
+        <button style={buttonStyle} onClick={newState} value='situational'> SITUATIONAL </button>,
+        <button style={buttonStyle} onClick={newState} value='strings'>     STRINGS     </button>]
 
 
     return (

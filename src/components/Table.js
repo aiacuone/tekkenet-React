@@ -56,6 +56,7 @@ export default function Table(props) {
     let tableStyle={
         fontFamily:'Segoe UI'
     }
+    
     return (
         filteredList.length>0?(
             <div>

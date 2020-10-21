@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import getCharacterMoves from '../getCharacterMoves'
 import characters from '../characters'
-import StartNFinishTable from './StartNFinishTable'
-import Table from '../Table'
+import Table from './Table'
 
 
 
@@ -35,7 +34,6 @@ export default function StartNFinish(props) {// eslint-disable-next-line
             <label>MED  <input type='radio' name='StartNFinish2' value='m' onClick={handleChange}></input></label>
             <label>HIGH <input type='radio' name='StartNFinish2' value='h' onClick={handleChange}></input></label>
 
-            {/* {value1&&value2&&<StartNFinishTable filteredMoveList={filteredMoveList}/>} */}
             {value1&&value2&&<Table filteredList={filteredMoveList}/>}
      
         </div>

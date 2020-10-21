@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import getCharacterMoves from '../getCharacterMoves'
 import characters from '../characters'
-import FramesRangeTable from './FramesRangeTable'
-import Table from '../Table'
+import Table from './Table'
 
 
 
