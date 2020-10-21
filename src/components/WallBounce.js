@@ -14,7 +14,9 @@ export default function WallBounce(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h2>WALL BOUNCE</h2>
             <Table filteredList={filteredList} />
 

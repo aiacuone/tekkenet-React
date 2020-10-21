@@ -13,7 +13,9 @@ export default function NormalLaunch(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h2>NORMAL LAUNCH</h2>
             <Table filteredList={filteredList} />
 

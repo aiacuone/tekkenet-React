@@ -14,7 +14,9 @@ export default function PowerCrush(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h2>POWER CRUSH</h2>
             <Table filteredList={filteredList} />
 

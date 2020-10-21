@@ -1,13 +1,10 @@
 import React, {useState} from 'react'
-import NewTable from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Table(props) {
     let [sort,setSort]=useState(false)
 
     let filteredList=props.filteredList
-
-
 
 
     function handleNumberSort(key){
@@ -18,9 +15,9 @@ export default function Table(props) {
         })
         :filteredList.sort((a,b)=>{
             return parseFloat(b[key])-parseFloat(a[key])
-        })
-        
+        }) 
     }
+
 
     function handleWordSort(key){
         setSort(!sort)
@@ -43,6 +40,7 @@ export default function Table(props) {
         })
     }
     
+
     let moves=filteredList.map((move)=>{
         let newMove=Object.values(move).map((value)=>{
             value=value.toUpperCase()
@@ -67,11 +65,18 @@ export default function Table(props) {
         class="bi bi-caret-down-square" 
         fill="currentColor" 
         xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" d="M3.544 6.295A.5.5 0 0 1 4 6h8a.5.5 0 0 1 .374.832l-4 4.5a.5.5 0 0 1-.748 0l-4-4.5a.5.5 0 0 1-.082-.537z"/>
-    <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-  </svg>
+        <path 
+            fill-rule="evenodd" 
+            d="M3.544 6.295A.5.5 0 0 1 4 6h8a.5.5 0 0 1 .374.832l-4 4.5a.5.5 0 0 1-.748 0l-4-4.5a.5.5 0 0 1-.082-.537z"
+        />
+        <path 
+            fill-rule="evenodd" 
+            d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+        />
+    </svg>
 
     return (
+
         
         filteredList.length>0?(
 

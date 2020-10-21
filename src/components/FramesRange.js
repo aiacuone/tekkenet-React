@@ -21,9 +21,13 @@ export default function FramesRange(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h3>FRAME RANGE</h3>
-
+            
+            <br/>
+            
             <label>LOW  <input type='number' value={lowValue}   name='low'  min='9' onChange={handleChange}></input></label>
             <label>HIGH <input type='number' value={highValue}  name='high' min='9' onChange={handleChange}></input></label>
 

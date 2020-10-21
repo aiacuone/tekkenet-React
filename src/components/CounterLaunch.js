@@ -14,7 +14,9 @@ export default function CounterLaunch(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h2>COUNTER LAUNCH</h2>
             <Table filteredList={filteredList} />
 

@@ -14,7 +14,9 @@ export default function RageArt(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h2>RAGE ART</h2>
             <Table filteredList={filteredList} />
 

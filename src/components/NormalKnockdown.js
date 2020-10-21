@@ -14,7 +14,9 @@ export default function NormalKnockdown(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h2>NORMAL KNOCKDOWN</h2>
             <Table filteredList={filteredList} />
 

@@ -14,7 +14,9 @@ export default function Homing(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h2>HOMING</h2>
             <Table filteredList={filteredList} />
 

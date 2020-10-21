@@ -14,7 +14,9 @@ export default function Safe(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h2>SAFE</h2>
             <Table filteredList={filteredList} />
 

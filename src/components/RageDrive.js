@@ -14,7 +14,9 @@ export default function RageDrive(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h2>RAGE DRIVE</h2>
             <Table filteredList={filteredList} />
 

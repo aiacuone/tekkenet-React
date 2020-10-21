@@ -1,8 +1,7 @@
 import React, {useState}    from 'react'
 import SpecificHeight       from './SpecificHeight'
 import StartNFinish         from './StartNFinish'
-import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
@@ -23,9 +22,8 @@ export default function Height(props) {
         borderRadius:   '20px',
         padding:        '10px 20px 10px 20px',
         background:     'none',
-        border:         '.5px solid black',
-        boxShadow:      '2px 2px 5px rgb(209, 209, 209)',
-        backgroundColor:'#e8f5fc'
+        border:         'none',
+        backgroundColor:'#e9f1f2'
     }
 
     let [button1Style,setButton1Style]=useState(buttonStyle)
@@ -46,11 +44,13 @@ export default function Height(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <button 
                 style={button1Style}
-                onMouseEnter={  ()=>changeButton1Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton1Style('#e8f5fc')} 
+                onMouseEnter={  ()=>changeButton1Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton1Style('#e9f1f2')} 
                 onClick={handleClick} 
                 value='specificHeight'
             >SPECIFIC HEIGHT  
@@ -58,8 +58,8 @@ export default function Height(props) {
 
             <button 
                 style={button2Style}
-                onMouseEnter={  ()=>changeButton2Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton2Style('#e8f5fc')} 
+                onMouseEnter={  ()=>changeButton2Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton2Style('#e9f1f2')} 
                 onClick={handleClick} 
                 value='startNFinish'
             >START AND FINISH 

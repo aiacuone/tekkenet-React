@@ -14,7 +14,9 @@ export default function Unsafe(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h2>UNSAFE</h2>
             <Table filteredList={filteredList} />
 

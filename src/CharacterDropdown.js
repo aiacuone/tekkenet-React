@@ -15,6 +15,7 @@ export default function CharacterDropdown() {
 
     return (
         <div>
+            <br/>
             <label>CHOOSE YOUR CHARACTER
                 <select onChange={handleChange}>
                     {characterOptions}

@@ -14,7 +14,9 @@ export default function DualString(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
            <h2>DUAL STRING</h2>
            <Table filteredList={filteredList} />
 

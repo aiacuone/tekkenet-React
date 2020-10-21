@@ -24,7 +24,12 @@ export default function SpecificHeight(props) {
 
         <div>
             
+            <br/>
+            
             <h3>SPECIFIC HEIGHT</h3>
+            
+            <br/>
+            
             <label>LOW<input    type='radio' value='l'  name='height' onChange={handleChange}></input></label>
             <label>MED<input    type='radio' value='m'  name='height' onChange={handleChange}></input></label>
             <label>HIGH<input   type='radio' value='h'  name='height' onChange={handleChange}></input><br/></label>

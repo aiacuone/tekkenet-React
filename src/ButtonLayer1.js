@@ -50,12 +50,11 @@ export default function ButtonLayer1(props) {
 
     let buttonStyle={
         margin:         '5px',
-        borderRadius:   '20px',
-        padding:        '10px 20px 10px 20px',
+        borderRadius:   '50px',
+        padding:        '10px 40px 10px 40px',
         background:     'none',
-        border:         '.5px solid black',
-        boxShadow:      '2px 2px 5px rgb(209, 209, 209)',
-        backgroundColor:'#e8f5fc'
+        border:         'none',
+        backgroundColor:'#e9f1f2'
     }
 
     let [button1Style,setButton1Style]=useState(buttonStyle)
@@ -117,10 +116,12 @@ export default function ButtonLayer1(props) {
     return (
         <div>
 
+            <br/>
+
             <button 
                 style={button1Style}
-                onMouseEnter={  ()=>changeButton1Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton1Style('#e8f5fc')}   
+                onMouseEnter={  ()=>changeButton1Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton1Style('#e9f1f2')}   
                 onClick={newState} 
                 value='frames' 
             >     FRAMES      
@@ -128,8 +129,8 @@ export default function ButtonLayer1(props) {
 
             <button 
                 style={button2Style}
-                onMouseEnter={  ()=>changeButton2Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton2Style('#e8f5fc')}   
+                onMouseEnter={  ()=>changeButton2Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton2Style('#e9f1f2')}   
                 onClick={newState} 
                 value='height'
             >      HEIGHT      
@@ -137,8 +138,8 @@ export default function ButtonLayer1(props) {
 
             <button 
                 style={button3Style}
-                onMouseEnter={  ()=>changeButton3Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton3Style('#e8f5fc')}   
+                onMouseEnter={  ()=>changeButton3Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton3Style('#e9f1f2')}   
                 onClick={newState} 
                 value='knockdown'
             >   KNOCKDOWN   
@@ -146,8 +147,8 @@ export default function ButtonLayer1(props) {
 
             <button 
                 style={button4Style}
-                onMouseEnter={  ()=>changeButton4Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton4Style('#e8f5fc')}   
+                onMouseEnter={  ()=>changeButton4Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton4Style('#e9f1f2')}   
                 onClick={newState} 
                 value='launch'
             >      LAUNCH      
@@ -155,8 +156,8 @@ export default function ButtonLayer1(props) {
 
             <button 
                 style={button5Style}
-                onMouseEnter={  ()=>changeButton5Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton5Style('#e8f5fc')}   
+                onMouseEnter={  ()=>changeButton5Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton5Style('#e9f1f2')}   
                 onClick={newState} 
                 value='rage'
             >        RAGE        
@@ -164,8 +165,8 @@ export default function ButtonLayer1(props) {
 
             <button 
                 style={button6Style}
-                onMouseEnter={  ()=>changeButton6Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton6Style('#e8f5fc')}   
+                onMouseEnter={  ()=>changeButton6Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton6Style('#e9f1f2')}   
                 onClick={newState} 
                 value='safety'
             >      SAFETY      
@@ -173,8 +174,8 @@ export default function ButtonLayer1(props) {
 
             <button 
                 style={button7Style}
-                onMouseEnter={  ()=>changeButton7Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton7Style('#e8f5fc')}   
+                onMouseEnter={  ()=>changeButton7Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton7Style('#e9f1f2')}   
                 onClick={newState} 
                 value='situational'
             > SITUATIONAL 
@@ -182,8 +183,8 @@ export default function ButtonLayer1(props) {
 
             <button 
                 style={button8Style}
-                onMouseEnter={  ()=>changeButton8Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton8Style('#e8f5fc')}   
+                onMouseEnter={  ()=>changeButton8Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton8Style('#e9f1f2')}   
                 onClick={newState} 
                 value='strings'
             >     STRINGS     

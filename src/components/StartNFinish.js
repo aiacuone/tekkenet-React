@@ -21,9 +21,13 @@ export default function StartNFinish(props) {// eslint-disable-next-line
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h2>START AND FINISH</h2>
-
+            
+            <br/>
+            
             <h3>FIRST HEIGHT</h3>
             <label>LOW  <input type='radio' name='StartNFinish1' value='l' onClick={handleChange}></input></label>
             <label>MED  <input type='radio' name='StartNFinish1' value='m' onClick={handleChange}></input></label>

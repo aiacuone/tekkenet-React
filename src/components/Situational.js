@@ -31,9 +31,8 @@ export default function Situational(props) {
         borderRadius:   '20px',
         padding:        '10px 20px 10px 20px',
         background:     'none',
-        border:         '.5px solid black',
-        boxShadow:      '2px 2px 5px rgb(209, 209, 209)',
-        backgroundColor:'#e8f5fc'
+        border:         'none',
+        backgroundColor:'#e9f1f2'
     }
 
     let [button1Style,setButton1Style]=useState(buttonStyle)
@@ -68,35 +67,37 @@ export default function Situational(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <button 
                 style={button1Style}
-                onMouseEnter={  ()=>changeButton1Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton1Style('#e8f5fc')}  
+                onMouseEnter={  ()=>changeButton1Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton1Style('#e9f1f2')}  
                 onClick={handleClick} 
                 value='plusOnBlock'
             >PLUS ON BLOCK   
             </button>
             <button 
                 style={button2Style}
-                onMouseEnter={  ()=>changeButton2Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton2Style('#e8f5fc')}  
+                onMouseEnter={  ()=>changeButton2Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton2Style('#e9f1f2')}  
                 onClick={handleClick} 
                 value='powerCrush'
             >POWERCRUSH      
             </button>
             <button 
                 style={button3Style}
-                onMouseEnter={  ()=>changeButton3Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton3Style('#e8f5fc')}  
+                onMouseEnter={  ()=>changeButton3Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton3Style('#e9f1f2')}  
                 onClick={handleClick} 
                 value='wallBounce'
             >WALLBOUNCE      
             </button>
             <button 
                 style={button4Style}
-                onMouseEnter={  ()=>changeButton4Style('#d8e6ed')}
-                onMouseOut={    ()=>changeButton4Style('#e8f5fc')}  
+                onMouseEnter={  ()=>changeButton4Style('#f0f4f5')}
+                onMouseOut={    ()=>changeButton4Style('#e9f1f2')}  
                 onClick={handleClick} 
                 value='homing'
             >HOMING          

@@ -14,7 +14,9 @@ export default function SingleString(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h2>SINGLE STRING</h2>
             <Table filteredList={filteredList} />
             

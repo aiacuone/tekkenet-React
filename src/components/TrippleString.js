@@ -14,7 +14,9 @@ export default function TrippleString(props) {
     return (
 
         <div>
-
+            
+            <br/>
+            
             <h2>TRIPPLE STRING</h2>
             <Table filteredList={filteredList} />
 
