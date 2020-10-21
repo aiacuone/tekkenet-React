@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import SpecificHeightTable from './SpecificHeightTable'
 import characters from '../characters'
 import getCharacterMoves from '../getCharacterMoves'
-
+import Table from '../Table'
 
 
 
@@ -30,7 +30,8 @@ export default function SpecificHeight(props) {
             <label>MED<input    type='radio' value='m'  name='height' onChange={handleChange}></input></label>
             <label>HIGH<input   type='radio' value='h'  name='height' onChange={handleChange}></input><br/></label>
 
-            {height&&<SpecificHeightTable  filteredMoveList={filteredMoveList} dropDownValue={props.dropDownValue} />}
+            {/* {height&&<SpecificHeightTable  filteredMoveList={filteredMoveList} dropDownValue={props.dropDownValue} />} */}
+            {height&&<Table  filteredList={filteredMoveList} dropDownValue={props.dropDownValue} />}
 
         </div>
         

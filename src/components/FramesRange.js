@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import getCharacterMoves from '../getCharacterMoves'
 import characters from '../characters'
 import FramesRangeTable from './FramesRangeTable'
+import Table from '../Table'
 
 
 
@@ -27,7 +28,8 @@ export default function FramesRange(props) {
             <label>LOW  <input type='number' value={lowValue}   name='low'  min='9' onChange={handleChange}></input></label>
             <label>HIGH <input type='number' value={highValue}  name='high' min='9' onChange={handleChange}></input></label>
 
-            {lowValue&&highValue&&<FramesRangeTable filteredMoveList={filteredMoveList}/>}
+            {/* {lowValue&&highValue&&<FramesRangeTable filteredMoveList={filteredMoveList}/>} */}
+            {lowValue&&highValue&&<Table filteredList={filteredMoveList}/>}
 
         </div>
         
