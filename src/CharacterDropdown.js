@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import ButtonLayer1 from './ButtonLayer1'
 import characters from './characters'
+import MainContainer from './components/tabMain/MainContainer'
 
 export default function CharacterDropdown() {
 
@@ -23,6 +24,8 @@ export default function CharacterDropdown() {
             </label>
 
             {dropDownValue!==''&&<ButtonLayer1 dropDownValue={dropDownValue}/>}
+            {/* {dropDownValue!==''&&<TabMainContainer dropDownValue={dropDownValue}/>} */}
+            <MainContainer dropDownValue={dropDownValue}/>
         </div>
     )
 }

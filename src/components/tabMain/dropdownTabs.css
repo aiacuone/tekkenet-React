@@ -1,0 +1,112 @@
+#dropdownTabsContainer{
+    display: grid;
+    /* position: absolute; */
+    width: 100%;
+    height: 150px;
+    justify-content: center;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(5,1fr);
+    border: 1px solid black;
+    border-bottom: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background: chartreuse;
+}
+
+#dropdownTabsContainer>div{
+    /* border: 1px solid black; */
+    /* background: darkorchid; */
+}
+
+#dropdownTabsContainer>div>div{
+
+    /* background: darkorchid; */
+    width: 100%;
+}
+
+#dropdownTabsContainer>div>div>ul{
+    /* width: 100%; */
+    padding: 0 0 0 0;
+    margin: 0;
+    border: 1px solid black;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top: none;
+
+}
+
+#dropdownTabsContainer>div>div>ul>li{
+    /* border: 1px solid black; */
+    list-style: none;
+    text-align: center;
+    /* width: 100%; */
+    padding: 5px 0 5px 0;
+    font-size: 15px;
+}
+
+#dropdownTabsContainer>div>div>ul>li:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#dropdownTabsContainer>div>div>ul>li:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+
+.dropdownContainer{
+    display: flex;
+    justify-content: center;
+
+}
+
+#dropdownFrames{
+    grid-column: 2/6;
+    grid-row:1/6;
+}
+
+#dropdownHeight{
+    grid-column: 4/8;
+    grid-row:1/6;
+}
+
+#dropdownKnockdown{
+    grid-column: 6/10;
+    grid-row:1/6;
+}
+
+#dropdownLaunch{
+    grid-column: 8/12;
+    grid-row:1/6;
+}
+
+#dropdownRage{
+    grid-column: 10/14;
+    grid-row:1/6;
+}
+
+#dropdownSafety{
+    grid-column: 12/16;
+    grid-row:1/6;
+}
+
+#dropdownSituational{
+    grid-column: 14/18;
+    grid-row:1/6;
+}
+
+#dropdownStrings{
+    grid-column: 16/20;
+    grid-row:1/6;
+}
+
+.lastDropdownContainer>ul{
+    background: white;
+}
+
+.lastDropdownContainer>ul>li:hover{
+    cursor: pointer;
+    background: rgb(241, 241, 241);
+}
