@@ -6,7 +6,6 @@ export default function Tabs() {
     return (
         <div id='tabsContainer'>
             <TopTabs />
-            <DropdownTabs />
         </div>
     )
 }
