@@ -10,13 +10,25 @@
 body{
     width: 100vw;
     height: 100vh;
-    background: black;
+    background: rgb(41, 41, 41);
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    /* background: orange; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header{
-    height: auto;
-    width: 100%;
-    background: blue;
+    /* height: auto; */
+    /* width: 100%; */
+    /* max-width: 1200px; */
+    /* background: blue; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,13 +36,13 @@ body{
 
 .homeHeader{
     height: 35px;
-    margin: 1vh 0;
+    margin: .5vh 0;
 }
 
 .dropdown{
-    height: auto;
-    width: 100%;
-    background: orange;
+    /* height: auto; */
+    /* width: 100%; */
+    /* background: green; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +50,11 @@ body{
 }
 
 .characterDropdown{
-    background: rgb(54, 54, 54);
+    background:grey;
+    margin: 1vh 0;
+    border: none;
+    border-radius: 5px;
+    margin: 0 0 0 10px;
 }
 
 .characterLabel{
@@ -46,23 +62,33 @@ body{
 }
 
 .category{
-    height: auto;
+    /* height: auto; */
     width: 100%;
-    background: purple;
+    max-width: 1000px;
+    background: black;
     display: flex;
     justify-content: center;
     /* flex-direction: column; */
     /* padding: 10px; */
+    margin: 1vh 0;
 }
 
 .categoryButton{
     cursor: pointer;
 }
 
+.categoryButton:focus{
+    /* background: rgb(0, 255, 255); */
+}
+
+.categoryButton:visited{
+    /* background: rgb(255, 0, 0); */
+}
+
 .subCategory{
-    height: 50px;
-    width: 100%;
-    background: rgb(9, 114, 0);
+    /* height: 50px; */
+    /* width: 100%; */
+    /* background: rgb(9, 114, 0); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +106,7 @@ body{
 }
 
 .subCategoryButtonContainer{
-    height: 50px;
+    /* height: 50px; */
     width: 100%;
     /* background: rgb(0, 107, 149); */
     display: flex;
@@ -88,40 +114,48 @@ body{
 }
 
 .attributes{
-    width: 100%;
+    /* width: 450px; */
     /* height: 70px; */
-    background: mediumspringgreen;
+    /* background: black; */
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px 0 10px 0;
+    /* flex-direction: row; */
 }
 
 .tableContainer{
     /* height: 20px; */
     width: 100%;
-    background: brown;
+    /* background: brown; */
     display: flex;
     justify-content: center;
 }
 
 .table{
     width: 100%;
-    background: dimgrey;
+    /* background: dimgrey; */
     display: flex;
     justify-content: center;
 }
 
 .footer{
     /* height: 70px; */
-    width: 100%;
-    background: violet;
+    /* width: 100%; */
+    /* background: violet; */
     display: flex;
     /* justify-content: center; */
     align-items: flex-end;
+    justify-content: center;
 }
 
 .input{
-    background: black;
+    background: grey;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+    width: 50px;
+    height: 20px;
 }
 
 .startNFinish{

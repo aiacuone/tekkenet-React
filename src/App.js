@@ -34,7 +34,7 @@ function App() {
   }
 
   return (
-    <>
+    <div class='main'>
     <Header/>
     <CharacterDropdown selectionObj={selectionObj} changeSelectionObj={changeSelectionObj}/>
     <Category selectionObj={selectionObj} changeSelectionObj={changeSelectionObj}/>
@@ -42,7 +42,7 @@ function App() {
     <Attributes selectionObj={selectionObj} changeSelectionObj={changeSelectionObj}/>
     <TableContainer selectionObj={selectionObj}/>
     <Footer selectionObj={selectionObj}/>
-    </>
+    </div>
   )
 }
 

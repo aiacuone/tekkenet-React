@@ -12,7 +12,12 @@ export default function TableContainer(props) {
     let attribute2=props.selectionObj.attribute2
     
 
-    let noAttribute=['knockdown','counterKnockdown','launch','counterLaunch','rageArt','rageDrive','safe','unSafe','plusOnBlock','powerCrush','wallBounce','homing','single','dual','tripple']
+    let noAttribute=[
+        'knockdown','counterKnockdown','launch',
+        'counterLaunch','rageArt','rageDrive',
+        'safe','unSafe','plusOnBlock','powerCrush',
+        'wallBounce','homing','single','dual','tripple'
+    ]
 
     let oneAttribute=['specificFrames','specificHeight']
 
