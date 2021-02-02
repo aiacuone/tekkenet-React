@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Table(props) {
     let [sort,setSort]=useState(false)
@@ -80,11 +80,10 @@ export default function Table(props) {
         
         filteredList.length>0?(
 
-            <div>
-                <br/>
+            <div class='table'>
                 <table style={tableStyle}>
                     <tr>
-        <th style={headerStyle}onClick={()=>handleWordSort("Command")}>COMMAND &nbsp;{arrowDown}</th>
+                        <th style={headerStyle}onClick={()=>handleWordSort("Command")}>COMMAND &nbsp;{arrowDown}</th>
                         <th style={headerStyle}onClick={()=>handleWordSort("Hit level")}>HIT LEVEL &nbsp;{arrowDown}</th>
                         <th style={headerStyle}onClick={()=>handleNumberSort("Damage")}>DAMAGE &nbsp;{arrowDown}</th>
                         <th style={headerStyle}onClick={()=>handleNumberSort("Start up frame")}>START UP FRAME &nbsp;{arrowDown}</th>

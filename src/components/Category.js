@@ -1,12 +1,13 @@
-import React, {useState} from 'react'
+import React from 'react'
 import '../styles/category.css'
 
 export default function Category(props) {
  
     function handleClick(category){
-        // props.changeSelectionObj.setAttributes('')
-        props.changeSelectionObj.setCategory(category)
+        props.changeSelectionObj.setAttribute1('')
+        props.changeSelectionObj.setAttribute2('')
         props.changeSelectionObj.setSubCategory('')
+        props.changeSelectionObj.setCategory(category)
     }
 
     let categoryArr=['frames','height','knockdown','launch','rage','safety','situational','strings']
@@ -17,9 +18,7 @@ export default function Category(props) {
 
     return (
         <div class='category'>
-            {console.log(props.selectionObj.category)}
             {categoryButtons}
-            
         </div>
     )
 }

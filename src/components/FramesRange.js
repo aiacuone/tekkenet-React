@@ -1,9 +1,4 @@
-import React, {useState,useEffect} from 'react'
-import getCharacterMoves from '../getCharacterMoves'
-import characters from '../characters'
-import Table from './Table'
-
-
+import React, {useEffect} from 'react'
 
 export default function FramesRange(props) {
 
@@ -15,20 +10,12 @@ export default function FramesRange(props) {
         props.changeSelectionObj.setAttribute1('')
         props.changeSelectionObj.setAttribute2('')
     },[])
-    
 
-    // let moveList=characters[props.dropDownValue].moveList
-    // let filteredMoveList=getCharacterMoves.frames.framesRange.infoFunc(lowValue,highValue,moveList)
-
-    
     return (
 
         <div>
-            {console.log(props.selectionObj.attribute1,props.selectionObj.attribute2)}
             <label>LOW  <input class='input'type='number' value={props.selectionObj.attribute1}   name='low'  min='9' onChange={handleChange}></input></label>
             <label>HIGH <input class='input' type='number' value={props.selectionObj.attribute2}  name='high' min='9' onChange={handleChange}></input></label>
-                    
-            {/* {lowValue&&highValue&&<Table filteredList={filteredMoveList}/>} */}
         </div>
         
     )

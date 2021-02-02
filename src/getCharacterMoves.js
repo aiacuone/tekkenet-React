@@ -82,7 +82,7 @@ export let getCharacterMoves={
                   arr.push(moveList[i])
                 }
               }
-             
+              
               return arr
             }
           },
@@ -112,11 +112,13 @@ export let getCharacterMoves={
             infoFunc:function(moveList){
               let regex = /knd/i
               let arr = [];
+              console.log('knockfunction')
               for(let i=0; i<moveList.length; i++){
                   if(regex.test(moveList[i]["Hit frame"])){
                       arr.push(moveList[i])       
                   }   
               }
+              
               return arr
             }
           },
