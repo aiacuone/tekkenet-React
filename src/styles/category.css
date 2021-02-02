@@ -1,0 +1,23 @@
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    /* flex-direction: row; */
+}
+
+
+.categoryButton{
+    background: none;
+    border: 1px white solid;
+    margin: 7px 1vw;
+    padding: 5px 10px;
+    border-radius: 15px;
+    /* width: 100px; */
+}
+
+/* .categoryButton.top{
+    margin-top: 15px;
+}
+
+.categoryButton.bottom{
+    margin-bottom: 15px;
+} */

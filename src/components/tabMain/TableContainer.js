@@ -1,5 +1,5 @@
 import React from 'react'
-import './table.css'
+// import './table.css'
 
 export default function Table() {
     return (

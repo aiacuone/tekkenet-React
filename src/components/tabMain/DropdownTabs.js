@@ -1,5 +1,5 @@
 import React from 'react'
-import './dropdownTabs.css'
+// import './dropdownTabs.css'
 import FramesTabs from './dropdown/FramesTabs'
 import HeightTabs from './dropdown/HeightTabs'
 import KnockdownTabs from './dropdown/KnockdownTabs'

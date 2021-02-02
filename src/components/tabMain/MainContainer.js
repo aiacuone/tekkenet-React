@@ -1,7 +1,7 @@
 import React from 'react'
 import TabsContainer from './TabsContainer'
 import TableContainer from './TableContainer'
-import './tab.css'
+// import './tab.css'
 
 export default function MainContainer() {
     return (
