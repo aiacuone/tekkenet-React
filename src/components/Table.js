@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './Footer'
+import arrow from '../images/arrow.svg'
 
 export default function Table(props) {
     let [sort,setSort]=useState(false)
@@ -44,57 +45,38 @@ export default function Table(props) {
     let moves=filteredList.map((move)=>{
         let newMove=Object.values(move).map((value)=>{
             value=value.toUpperCase()
-            return <td>{value}</td>
+            return <td class='tableColumn'>{value}</td>
         })
-        return <tr>{newMove}</tr>
+        return <tr class='tableMoveRow'>{newMove}</tr>
     })
 
     let headerStyle={
         cursor:'pointer'
     }
-
-    let tableStyle={
-        fontFamily:'Segoe UI',
-        padding:'10px'
-    }
     
-    let arrowDown=<svg 
-            width="1em" 
-            height="1em" 
-            viewBox="0 0 16 16" 
-            class="bi bi-caret-down-square" 
-            fill="currentColor" 
-            xmlns="http://www.w3.org/2000/svg">
-            <path 
-                fill-rule="evenodd" 
-                d="M3.544 6.295A.5.5 0 0 1 4 6h8a.5.5 0 0 1 .374.832l-4 4.5a.5.5 0 0 1-.748 0l-4-4.5a.5.5 0 0 1-.082-.537z"
-            />
-            <path 
-                fill-rule="evenodd" 
-                d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
-            />
-        </svg>
 
     return (
 
         filteredList.length>0?(
 
-            <div class='table'>
-                <table style={tableStyle}>
-                    <tr>
-                        <th style={headerStyle}onClick={()=>handleWordSort("Command")}>COMMAND &nbsp;{arrowDown}</th>
-                        <th style={headerStyle}onClick={()=>handleWordSort("Hit level")}>HIT LEVEL &nbsp;{arrowDown}</th>
-                        <th style={headerStyle}onClick={()=>handleNumberSort("Damage")}>DAMAGE &nbsp;{arrowDown}</th>
-                        <th style={headerStyle}onClick={()=>handleNumberSort("Start up frame")}>START UP FRAME &nbsp;{arrowDown}</th>
-                        <th style={headerStyle}onClick={()=>handleNumberSort("Block frame")}>BLOCK FRAME &nbsp;{arrowDown}</th>
-                        <th style={headerStyle}onClick={()=>handleWordSort("Hit frame")}>HIT FRAME &nbsp;{arrowDown}</th>
-                        <th style={headerStyle}onClick={()=>handleWordSort("Counter hit frame")}>COUNTER HIT FRAME &nbsp;{arrowDown}</th>
-                        <th style={headerStyle}onClick={()=>handleWordSort("Notes")}>NOTES &nbsp;{arrowDown}</th>
+            <div class='tableContainer2'>
+                <Footer selectionObj={props.selectionObj}/>
+                <table class='table'>
+                    <tr class='tableHeaderRow'>
+                        <th class='tableHeader'onClick={()=>handleWordSort("Command")}><div class='tableHeaderContainer'><h1>COMMAND</h1><img class='arrow' src={arrow}/></div></th>
+                        <th class='tableHeader'onClick={()=>handleWordSort("Hit level")}><div class='tableHeaderContainer'><h1>HEIGHT</h1> <img class='arrow' src={arrow}/></div></th>
+                        <th class='tableHeader'onClick={()=>handleNumberSort("Damage")}><div class='tableHeaderContainer'><h1>DAMAGE</h1> <img class='arrow' src={arrow}/></div></th>
+                        <th class='tableHeader'onClick={()=>handleNumberSort("Start up frame")}><div class='tableHeaderContainer'><h3>START FRAME</h3> <img class='arrow' src={arrow}/></div></th>
+                        <th class='tableHeader'onClick={()=>handleNumberSort("Block frame")}><div class='tableHeaderContainer'><h1>BLOCK FRAME</h1> <img class='arrow' src={arrow}/></div></th>
+                        <th class='tableHeader'onClick={()=>handleWordSort("Hit frame")}><div class='tableHeaderContainer'><h1>HIT FRAME</h1> <img class='arrow' src={arrow}/></div></th>
+                        <th class='tableHeader'onClick={()=>handleWordSort("Counter hit frame")}><div class='tableHeaderContainer'><h1>COUNTER</h1> <img class='arrow' src={arrow}/></div></th>
+                        <th class='tableHeader'onClick={()=>handleWordSort("Notes")}><div class='tableHeaderContainer'><h1>NOTES</h1> <img class='arrow' src={arrow}/></div></th>
                     </tr>
                     {moves}
                 </table>
+                <Footer selectionObj={props.selectionObj}/>
             </div>
-        ):<h3 style={tableStyle}>NO MOVES</h3>
+        ):<h3>NO MOVES</h3>
     )
 }
 

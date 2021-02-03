@@ -11,24 +11,18 @@ body{
     width: 100vw;
     height: 100vh;
     background: rgb(41, 41, 41);
-    /* display: flex; */
-    /* justify-content: center; */
 }
 
 .main{
     width: 100vw;
-    height: 100vh;
-    /* background: orange; */
+    height: 100%;
+    background: rgb(41, 41, 41);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .header{
-    /* height: auto; */
-    /* width: 100%; */
-    /* max-width: 1200px; */
-    /* background: blue; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,9 +34,6 @@ body{
 }
 
 .dropdown{
-    /* height: auto; */
-    /* width: 100%; */
-    /* background: green; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,40 +46,25 @@ body{
     border: none;
     border-radius: 5px;
     margin: 0 0 0 10px;
+    padding: 3px;
 }
 
-.characterLabel{
-    /* margin: 1vh 0; */
-}
 
 .category{
-    /* height: auto; */
     width: 100%;
     max-width: 1000px;
     background: black;
     display: flex;
     justify-content: center;
-    /* flex-direction: column; */
-    /* padding: 10px; */
     margin: 1vh 0;
+    border-radius: 10px;
 }
 
 .categoryButton{
     cursor: pointer;
 }
 
-.categoryButton:focus{
-    /* background: rgb(0, 255, 255); */
-}
-
-.categoryButton:visited{
-    /* background: rgb(255, 0, 0); */
-}
-
 .subCategory{
-    /* height: 50px; */
-    /* width: 100%; */
-    /* background: rgb(9, 114, 0); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,9 +72,7 @@ body{
 }
 
 .subCategoryContainer{
-    /* height: 100px; */
     width: 100%;
-    /* background: darkviolet; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,47 +80,103 @@ body{
 }
 
 .subCategoryButtonContainer{
-    /* height: 50px; */
     width: 100%;
-    /* background: rgb(0, 107, 149); */
     display: flex;
     justify-content: center;
 }
 
 .attributes{
-    /* width: 450px; */
-    /* height: 70px; */
-    /* background: black; */
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px 0 10px 0;
-    /* flex-direction: row; */
 }
 
 .tableContainer{
-    /* height: 20px; */
     width: 100%;
-    /* background: brown; */
     display: flex;
     justify-content: center;
+}
+
+.tableContainer2{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    margin: 0 20px;
+    white-space: nowrap;
+    column-gap: 0;
+    flex-direction: column;
+}
+
+.arrow{
+    height: 5px;
 }
 
 .table{
-    width: 100%;
-    /* background: dimgrey; */
-    display: flex;
-    justify-content: center;
+    border-collapse: collapse;
 }
 
-.footer{
-    /* height: 70px; */
-    /* width: 100%; */
-    /* background: violet; */
+.tableColumn{
+    padding-left: 10px;
+    min-width: 120px;
+
+}
+
+.tableArrow{
+    /* margin: 10px; */
+
+}
+
+.tableHeader{
+    cursor: pointer;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.tableHeaderContainer{
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
+    align-items: center;
+}
+
+.tableHeaderRow{
+    height: 50px;
+
+}
+
+.tableMoveRow{
+    height: 30px;
+
+}
+
+.tableMoveRow:nth-child(even){
+    background: rgb(87, 87, 87);
+}
+
+.tableMoveRow:nth-child(odd){
+    background: dimgrey;
+}
+
+.tableMoveRow:last-child .tableColumn:first-child{
+/* border-bottom-left-radius: 10px; */
+/* background: orange; */
+
+}
+
+
+
+.footer{
+    display: flex;
     align-items: flex-end;
     justify-content: center;
+    margin: 20px 0;
+    color: grey;
+}
+
+.footer h1{
+    color: rgb(156, 156, 156);
+    font-size: 10px;
 }
 
 .input{
@@ -172,9 +202,5 @@ body{
 
 .attributeRadio{
     margin-right: 10px;
-}
-
-.attributeLabel.radio{
-    /* margin-left: 10px; */
 }
 

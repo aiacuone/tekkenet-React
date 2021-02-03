@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import '../styles/subCategory.css'
 
 export default function SubCategory(props) {
-
 
     let objSubCategoryObj={
         frames:[ 
@@ -52,13 +51,9 @@ export default function SubCategory(props) {
 
     if(props.selectionObj.category!==''){
         subCategoryButtons=objSubCategoryObj[props.selectionObj.category].map((item)=>{
-           return <button class='categoryButton' value={item.code} onClick={()=>handleClick(item.code)}>{item.button.toUpperCase()}</button>
+           return <button class='categoryButton' style={{background:item.code===props.selectionObj.subCategory&&'grey'}} value={item.code} onClick={()=>handleClick(item.code)}>{item.button.toUpperCase()}</button>
        })
    }
-
-
-
-
 
     return (
         <div class='subCategory'>

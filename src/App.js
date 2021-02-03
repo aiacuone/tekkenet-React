@@ -40,8 +40,9 @@ function App() {
     <Category selectionObj={selectionObj} changeSelectionObj={changeSelectionObj}/>
     <SubCategory selectionObj={selectionObj} changeSelectionObj={changeSelectionObj}/>
     <Attributes selectionObj={selectionObj} changeSelectionObj={changeSelectionObj}/>
+    {/* <Footer selectionObj={selectionObj}/> */}
     <TableContainer selectionObj={selectionObj}/>
-    <Footer selectionObj={selectionObj}/>
+    {/* <Footer selectionObj={selectionObj}/> */}
     </div>
   )
 }

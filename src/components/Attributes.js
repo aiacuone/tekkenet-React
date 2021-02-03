@@ -5,6 +5,9 @@ import SpecificHeight from './SpecificHeight'
 import StartNFinish from './StartNFinish'
 
 export default function Attributes(props) {
+
+    let category=props.selectionObj.category
+
     return (
         <div class='attributes'>
             {props.selectionObj.subCategory=='framesRange'&&props.selectionObj.category=='frames'&&<FramesRange selectionObj={props.selectionObj} changeSelectionObj={props.changeSelectionObj}/>}

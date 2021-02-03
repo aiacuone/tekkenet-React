@@ -2,6 +2,7 @@ import React from 'react'
 import characters from '../characters'
 import getCharacterMoves from '../getCharacterMoves'
 import Table from './Table'
+import Footer from './Footer'
 
 export default function TableContainer(props) {
 
@@ -46,12 +47,12 @@ export default function TableContainer(props) {
     }
 
     return (
-        <div class='tableContainer'>
-            
-            {noAttributeMoveList!==null&&<Table filteredList={noAttributeMoveList}/>}
-            {oneAttributeMoveList!==null&&<Table filteredList={oneAttributeMoveList}/>}
-            {twoAttributesMoveList!==null&&<Table filteredList={twoAttributesMoveList}/>}
-            
-        </div>
+            <div class='tableContainer'>
+                
+                {noAttributeMoveList!==null&&<Table selectionObj={props.selectionObj}filteredList={noAttributeMoveList}/>}
+                {oneAttributeMoveList!==null&&<Table selectionObj={props.selectionObj}filteredList={oneAttributeMoveList}/>}
+                {twoAttributesMoveList!==null&&<Table selectionObj={props.selectionObj}filteredList={twoAttributesMoveList}/>}
+                
+            </div>
     )
 }
