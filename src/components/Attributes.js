@@ -4,17 +4,23 @@ import SpecificFrames from './SpecificFrames'
 import SpecificHeight from './SpecificHeight'
 import StartNFinish from './StartNFinish'
 
-export default function Attributes(props) {
-
-    let category=props.selectionObj.category
-
-    return (
-        <div class='attributes'>
-            {props.selectionObj.subCategory=='framesRange'&&props.selectionObj.category=='frames'&&<FramesRange selectionObj={props.selectionObj} changeSelectionObj={props.changeSelectionObj}/>}
-            {props.selectionObj.subCategory=='specificFrames'&&props.selectionObj.category=='frames'&&<SpecificFrames selectionObj={props.selectionObj} changeSelectionObj={props.changeSelectionObj}/>}
-            {props.selectionObj.subCategory=='specificHeight'&&props.selectionObj.category=='height'&&<SpecificHeight selectionObj={props.selectionObj} changeSelectionObj={props.changeSelectionObj}/>}
-            {props.selectionObj.subCategory=='startNFinish'&&props.selectionObj.category=='height'&&<StartNFinish selectionObj={props.selectionObj} changeSelectionObj={props.changeSelectionObj}/>}
-
-        </div>
-    )
+export default function Attributes({ state, setState }) {
+	return (
+		<div class="attributes">
+			{state.subCategory === 'framesRange' && state.category === 'frames' && (
+				<FramesRange state={state} setState={setState} />
+			)}
+			{state.subCategory === 'specificFrames' &&
+				state.category === 'frames' && (
+					<SpecificFrames state={state} setState={setState} />
+				)}
+			{state.subCategory === 'specificHeight' &&
+				state.category === 'height' && (
+					<SpecificHeight state={state} setState={setState} />
+				)}
+			{state.subCategory === 'startNFinish' && state.category === 'height' && (
+				<StartNFinish state={state} setState={setState} />
+			)}
+		</div>
+	)
 }

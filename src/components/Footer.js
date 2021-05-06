@@ -1,13 +1,15 @@
 import React from 'react'
 
-export default function Footer(props) {
-    return (
-        <div class='footer'>
-            {props.selectionObj.character!==''&&<h1>{props.selectionObj.character.toUpperCase()+'/'}</h1>}
-            {props.selectionObj.category!==''&&<h1>{props.selectionObj.category.toUpperCase()+'/'}</h1>}
-            {props.selectionObj.subCategory!==''&&<h1>{props.selectionObj.subCategory.toUpperCase()+'/'}</h1>}
-            {props.selectionObj.attribute1!==''&&<h1>{props.selectionObj.attribute1.toUpperCase()}</h1>}
-            {props.selectionObj.attribute2!==''&&<h1>-{props.selectionObj.attribute2.toUpperCase()}</h1>}
-        </div>
-    )
+export default function Footer({ state, setState }) {
+	return (
+		<div class="footer">
+			{state.character !== '' && <h1>{state.character.toUpperCase() + '/'}</h1>}
+			{state.category !== '' && <h1>{state.category.toUpperCase() + '/'}</h1>}
+			{state.subCategory !== '' && (
+				<h1>{state.subCategory.toUpperCase() + '/'}</h1>
+			)}
+			{state.attribute1 !== '' && <h1>{state.attribute1.toUpperCase()}</h1>}
+			{state.attribute2 !== '' && <h1>-{state.attribute2.toUpperCase()}</h1>}
+		</div>
+	)
 }

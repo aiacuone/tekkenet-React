@@ -1,19 +1,21 @@
-import React, {useEffect}    from 'react'
+import React, { useEffect } from 'react'
 
-export default function SpecificFrames(props) {
+export default function SpecificFrames({ state, setState }) {
+	function handleChange(e) {
+		setState.setAttribute1(e.target.value)
+	}
 
-    function handleChange(e){
-        props.changeSelectionObj.setAttribute1(e.target.value)
-    }
+	useEffect(() => {
+		setState.setAttribute1('')
+	}, [])
 
-    useEffect(()=>{
-        props.changeSelectionObj.setAttribute1('')
-    },[])
-   
-    return (
-        <div>
-            <input class='input' type='number' onChange={handleChange} value={props.selectionObj.attribute1}></input>
-        </div>
-        
-    )
+	return (
+		<div>
+			<input
+				class="input"
+				type="number"
+				onChange={handleChange}
+				value={state.attribute1}></input>
+		</div>
+	)
 }
